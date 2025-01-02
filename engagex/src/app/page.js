@@ -1,11 +1,9 @@
-import GlobeLayout from "./GlobeLayout";
-import HomeBanner from "./HomeBanner";
+import HomePage from "./page/index"
 
 export default function Home() {
   return (
     <div>
-      <HomeBanner />
-      <GlobeLayout />
+      <HomePage/>
     </div>
   );
 }

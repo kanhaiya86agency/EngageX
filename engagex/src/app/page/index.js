@@ -2,6 +2,7 @@ import HomeBanner from "@/components/HomeBanner";
 import HomeBannerTwo from "@/components/HomeBannerTwo";
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
+import GlobeLayout from "../GlobeLayout";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       </Head>
       <Navbar />
       <HomeBanner />
+      <GlobeLayout/>
       <HomeBannerTwo/>
     </div>
   );

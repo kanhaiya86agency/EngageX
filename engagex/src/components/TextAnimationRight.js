@@ -26,7 +26,7 @@ export function RightAnimation({ text }) {
                 : {}
             }
             exit="hidden"
-            transition={{ duration: 0.5, delay: (arr.length - i - 1) * 0.2 }}
+            transition={{ duration: 0.5, delay: (arr.length - i - 1) * 0.09 }}
             className=""
           >
             {char === " " ? <span>&nbsp;</span> : char}

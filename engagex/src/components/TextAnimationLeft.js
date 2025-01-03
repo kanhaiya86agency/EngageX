@@ -26,7 +26,7 @@ export function GradualSpacing({ text }) {
                 : {}
             }
             exit="hidden"
-            transition={{ duration: 0.5, delay: i * 0.2 }}
+            transition={{ duration: 0.5, delay: i * 0.09 }}
             className=""
           >
             {char === " " ? <span>&nbsp;</span> : char}

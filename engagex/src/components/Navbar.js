@@ -40,7 +40,7 @@ export default function Navbar() {
         <ListItem disablePadding>
           <ListItemButton>
             <Link href="/world" passHref>
-              <ListItemText primary="Globel" />
+              <ListItemText primary="Global" />
             </Link>
           </ListItemButton>
         </ListItem>

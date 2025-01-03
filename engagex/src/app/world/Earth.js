@@ -2,18 +2,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { Users, Plus } from "lucide-react";
-import { drawThreeGeo } from "./threeGeoJSON";
-import getStarfield from "./geoStarField";
+import { Plus } from "lucide-react";
+import getStarfield from "../../../public/geoStarField";
 import * as TWEEN from "@tweenjs/tween.js";
-import { userData } from "../../public/UserData";
+import { drawThreeGeo } from "../../../public/threeGeoJSON";
+import { userData } from "../../../public/UserData";
 
 const GlobeLayout = () => {
   const canvasRef = useRef(null);
   const [visibleProfile, setVisibleProfile] = useState(null);
   const [popupPosition, setPopupPosition] = useState([{ x: 0, y: 0 }]);
   const [isInteracting, setIsInteracting] = useState(false);
-  const [isRotating, setIsRotating] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;

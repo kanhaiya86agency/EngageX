@@ -50,6 +50,15 @@ const GlobeLayout = () => {
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
     globeGroup.add(globe);
 
+    // const bordersMaterial = new THREE.LineBasicMaterial({
+    //   color: "#6f6e6e",
+    //   linewidth: 2,
+    // });
+
+    // const bordersGeometry = new THREE.EdgesGeometry(globeGeometry);
+    // const borders = new THREE.LineSegments(bordersGeometry, bordersMaterial);
+    // globeGroup.add(borders);
+
     const markerGeometry = new THREE.SphereGeometry(0.01, 24, 16);
     const markerMaterial = new THREE.MeshBasicMaterial({ color: "red" });
     const markers = [];
@@ -69,6 +78,47 @@ const GlobeLayout = () => {
     const ambientLight = new THREE.AmbientLight(0xffffff, 10);
     scene.add(ambientLight);
 
+    const updateVisibleMarkers = (markers, camera, globeGroup) => {
+      const cameraForward = new THREE.Vector3();
+      camera.getWorldDirection(cameraForward);
+
+      const visibleMarkers = markers.filter((marker) => {
+        const markerPosition = marker.position
+          .clone()
+          .applyMatrix4(globeGroup.matrixWorld);
+        const dotProduct = cameraForward.dot(markerPosition.normalize());
+        return dotProduct < -0.65; // Threshold for visibility
+      });
+
+      const popupPositions = visibleMarkers.map((marker) => {
+        const worldPosition = marker.position
+          .clone()
+          .applyMatrix4(globeGroup.matrixWorld);
+        const screenPosition = worldPosition.clone().project(camera);
+
+        const isVisibleOnScreen =
+          screenPosition.x >= -1 &&
+          screenPosition.x <= 1 &&
+          screenPosition.y >= -1 &&
+          screenPosition.y <= 1;
+
+        if (!isVisibleOnScreen) return null;
+
+        return {
+          userData: marker.userData,
+          x: (screenPosition.x * 0.5 + 0.5) * canvas.clientWidth + 10,
+          y: (-screenPosition.y * 0.5 + 0.5) * canvas.clientHeight + 10,
+        };
+      });
+
+      const validPopups = popupPositions.filter(
+        (position) => position !== null
+      );
+
+      setVisibleProfile(visibleMarkers.map((marker) => marker.userData));
+      setPopupPosition(validPopups);
+    };
+
     const animate = () => {
       requestAnimationFrame(animate);
 
@@ -79,27 +129,7 @@ const GlobeLayout = () => {
       const cameraForward = new THREE.Vector3();
       camera.getWorldDirection(cameraForward);
 
-      const visibleMarker = markers.find((marker) => {
-        const markerPosition = marker.position
-          .clone()
-          .applyMatrix4(globeGroup.matrixWorld);
-        const dotProduct = cameraForward.dot(markerPosition.normalize());
-        return dotProduct < -0.085;
-      });
-
-      if (visibleMarker) {
-        setVisibleProfile(visibleMarker.userData);
-
-        const screenPosition = visibleMarker.position
-          .clone()
-          .applyMatrix4(globeGroup.matrixWorld)
-          .project(camera);
-        const x = (screenPosition.x * 0.5 + 0.5) * window.innerWidth;
-        const y = (-screenPosition.y * 0.5 + 0.5) * window.innerHeight;
-        setPopupPosition({ x, y });
-      } else {
-        setVisibleProfile(null);
-      }
+      updateVisibleMarkers(markers, camera, globeGroup);
 
       controls.update();
       renderer.render(scene, camera);
@@ -140,73 +170,84 @@ const GlobeLayout = () => {
     };
   }, []);
 
-  const handleMarkerClick = (user) => {
-    alert("Marker clicked");
-    if (isRotating) return; // Prevent multiple rotations at the same time
-    setIsRotating(true);
-
-    const { latitude, longitude } = user;
-    const targetPosition = getPositionFromLatLon(latitude, longitude);
-
-    const targetRotation = new THREE.Euler(
-      0,
-      Math.atan2(targetPosition.x, targetPosition.z),
-      0
-    );
-    // new TWEEN.Tween(globeGroup.rotation)
-    //   .to({ y: targetRotation.y }, 1000) // Rotate to the marker position smoothly
-    //   .easing(TWEEN.Easing.Quadratic.Out)
-    //   .onComplete(() => {
-    //     setIsRotating(false);
-    //     setVisibleProfile(user); // Show the profile after rotation
-    //   })
-    //   .start();
-  };
-
   const getPositionFromLatLon = (lat, lon, radius = 0.6) => {
     const phi = (90 - lat) * (Math.PI / 180);
     const theta = (lon + 180) * (Math.PI / 180);
 
     return {
       x: -radius * Math.sin(phi) * Math.cos(theta),
-      y: -radius * Math.cos(phi),
-      z: -radius * Math.sin(phi) * Math.sin(theta),
+      y: radius * Math.cos(phi),
+      z: radius * Math.sin(phi) * Math.sin(theta),
     };
+  };
+
+  const groupUsersByContinent = (users) => {
+    return users.reduce((acc, user) => {
+      if (!acc[user.continent]) {
+        acc[user.continent] = [];
+      }
+      acc[user.continent].push(user);
+      return acc;
+    }, {});
   };
 
   return (
     <div className="flex flex-row justify-between bg-[#2c2c2c] px-10 relative w-full h-screen">
       <div className="flex justify-between items-center h-[100vh] w-[20%] px-4 bg-transparent text-white">
-        <div className="border-t-4"></div>
-        <div className="flex justify-between items-center w-full border-t-[1px] border-[#6f6e6e] py-2">
+        <div className="flex justify-between text-lg items-center w-full border-t-[1px] border-[#6f6e6e] py-2">
           <p>Total Users</p>
           <p>{userData.length}</p>
         </div>
       </div>
 
-      <div className="flex items-center justify-center h-[100vh] w-[60%]">
+      <div className="relative flex items-center justify-center h-[100vh] rounded-full w-[60%]">
         <canvas ref={canvasRef} className="w-full h-full" />
-        {visibleProfile && (
-          <div
-            className="absolute transform -translate-x-1/2 -translate-y-1/2 bg-[#2c2c2c] border border-sky-500 shadow-lg"
-            style={{
-              left: `${popupPosition.x}px`,
-              top: `${popupPosition.y}px`,
-            }}
-          >
-            <div className="flex flex-row justify-start items-center">
-              <Plus className="w-full h-full bg-sky-500 text-sky-50 sm:w-full p-1 sm:h-full" />
-              <p className="sm:w-full min-w-[150] w-full p-1 sm:h-full text-sky-50">
-                {visibleProfile.name}
-              </p>
+        {visibleProfile &&
+          popupPosition &&
+          popupPosition.map((position, index) => (
+            <div
+              key={index}
+              className="absolute transform -translate-x-1/2 rounded-full opacity-[5] -translate-y-1/2 bg-[#2c2c2c] border border-sky-500 shadow-lg"
+              style={{
+                left: `${position.x}px`,
+                top: `${position.y}px`,
+                zIndex: `${position.zDepth}`,
+              }}
+            >
+              <div className="flex flex-row justify-start rounded-full items-center">
+                {visibleProfile[index]?.profilePicture ? (
+                  <img
+                    className="w-[40] rounded-full h-[40] text-sky-50 sm:w-[40] p-1 sm:h-[40]"
+                    src={visibleProfile[index]?.profilePicture}
+                    alt={visibleProfile[index]?.name}
+                  />
+                ) : (
+                  <Plus className="w-full h-full bg-sky-500 text-sky-50 sm:w-full p-1 sm:h-full" />
+                )}
+                <p className="sm:w-max w-max p-1 min-w-[100] sm:h-max text-sky-50">
+                  {visibleProfile[index]?.name || "Unknown"}
+                </p>
+              </div>
             </div>
-          </div>
-        )}
+          ))}
       </div>
 
-      <div className="flex justify-between items-center h-[100vh] w-[20%] px-4 bg-[#2c2c2c] text-white">
-        <h1 className="text-xl font-bold">Globe Layout</h1>
-        <Users className="text-xl text-gray-300" />
+      <div className="flex flex-col justify-center items-center h-[100vh] w-[20%] px-4 bg-[#2c2c2c] text-white">
+        <div className="flex w-full flex-row justify-between items-center border-b-[1px] border-[#6f6e6e] py-2">
+          <h1 className="text-xl">Globe Count</h1>
+        </div>
+
+        <div className="w-full">
+          {Object.keys(groupUsersByContinent(userData)).map((continent) => (
+            <div
+              className="flex flex-row justify-between items-center border-b-[1px] border-[#6f6e6e] py-2"
+              key={continent}
+            >
+              <h2 className="text-white ">{continent}</h2>
+              <ul>{groupUsersByContinent(userData)[continent].length}</ul>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

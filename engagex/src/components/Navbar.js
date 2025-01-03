@@ -37,7 +37,7 @@ export default function Navbar() {
             </ListItemButton>
           </ListItem>
         </Link>
-        <Link href="/world" passHref>
+        <Link href="/" passHref>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemText primary="Global" />
@@ -54,7 +54,7 @@ export default function Navbar() {
         <Image src={logo} alt="EngageX" className="lg:w-[200px] w-[120px]" />
         <div className="flex space-x-6">
           <button className="px-6 py-2 bg-transparent text-white text-sm font-medium border border-white rounded-full transition">
-            Log in
+            Join Now
           </button>
           <button
             onClick={() => toggleDrawer(true)}

@@ -1,6 +1,5 @@
 "use client";
 
-import { RiMenu3Fill } from "react-icons/ri";
 import Image from "next/image";
 import hamburger from "../../public/Hamburger.png";
 import logo from "../../public/engagex-logo.png";

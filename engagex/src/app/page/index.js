@@ -1,4 +1,3 @@
-import Dummy from "@/components/Dummy";
 import HomeBanner from "@/components/HomeBanner";
 import HomeBannerTwo from "@/components/HomeBannerTwo";
 import Navbar from "@/components/Navbar";
@@ -15,10 +14,8 @@ export default function HomePage() {
       </Head>
       <Navbar />
       <HomeBanner />
-      {/* <Dummy/> */}
       <GlobeLayout/>
       <HomeBannerTwo/>
-
     </div>
   );
 }

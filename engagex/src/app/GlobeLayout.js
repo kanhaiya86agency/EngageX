@@ -50,15 +50,6 @@ const GlobeLayout = () => {
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
     globeGroup.add(globe);
 
-    // const bordersMaterial = new THREE.LineBasicMaterial({
-    //   color: "#6f6e6e",
-    //   linewidth: 2,
-    // });
-
-    // const bordersGeometry = new THREE.EdgesGeometry(globeGeometry);
-    // const borders = new THREE.LineSegments(bordersGeometry, bordersMaterial);
-    // globeGroup.add(borders);
-
     const markerGeometry = new THREE.SphereGeometry(0.01, 24, 16);
     const markerMaterial = new THREE.MeshBasicMaterial({ color: "red" });
     const markers = [];
@@ -87,7 +78,7 @@ const GlobeLayout = () => {
           .clone()
           .applyMatrix4(globeGroup.matrixWorld);
         const dotProduct = cameraForward.dot(markerPosition.normalize());
-        return dotProduct < -0.65; // Threshold for visibility
+        return dotProduct < -0.65;
       });
 
       const popupPositions = visibleMarkers.map((marker) => {
@@ -126,9 +117,6 @@ const GlobeLayout = () => {
         globeGroup.rotation.y += 0.002;
       }
 
-      const cameraForward = new THREE.Vector3();
-      camera.getWorldDirection(cameraForward);
-
       updateVisibleMarkers(markers, camera, globeGroup);
 
       controls.update();
@@ -161,6 +149,7 @@ const GlobeLayout = () => {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
     };
+
     window.addEventListener("resize", handleResize);
     handleResize();
 
@@ -192,22 +181,22 @@ const GlobeLayout = () => {
   };
 
   return (
-    <div className="flex flex-row justify-between bg-[#2c2c2c] px-10 relative w-full h-screen">
-      <div className="flex justify-between items-center h-[100vh] w-[20%] px-4 bg-transparent text-white">
-        <div className="flex justify-between text-lg items-center w-full border-t-[1px] border-[#6f6e6e] py-2">
+    <div className="flex flex-col lg:flex-row justify-between bg-[#2c2c2c] px-4 py-4 lg:px-10 relative w-full ">
+      <div className="flex justify-between items-center sm:h-auto w-full lg:w-[20%] px-4 bg-transparent text-white">
+        <div className="flex justify-between text-lg items-center w-full border-y-[1px] border-[#6f6e6e] py-2">
           <p>Total Users</p>
           <p>{userData.length}</p>
         </div>
       </div>
 
-      <div className="relative flex items-center justify-center h-[100vh] rounded-full w-[60%]">
+      <div className="relative flex items-center justify-center h-[50vh] lg:h-[100vh] rounded-full w-full lg:w-[60%]">
         <canvas ref={canvasRef} className="w-full h-full" />
         {visibleProfile &&
           popupPosition &&
           popupPosition.map((position, index) => (
             <div
               key={index}
-              className="absolute transform -translate-x-1/2 rounded-full opacity-[5] -translate-y-1/2 bg-[#2c2c2c] border border-sky-500 shadow-lg"
+              className="absolute transform -translate-x-1/2 rounded-full opacity-[0.8] -translate-y-1/2 bg-[#2c2c2c] border border-sky-500 shadow-lg"
               style={{
                 left: `${position.x}px`,
                 top: `${position.y}px`,
@@ -217,14 +206,14 @@ const GlobeLayout = () => {
               <div className="flex flex-row justify-start rounded-full items-center">
                 {visibleProfile[index]?.profilePicture ? (
                   <img
-                    className="w-[40] rounded-full h-[40] text-sky-50 sm:w-[40] p-1 sm:h-[40]"
+                    className="w-[32px] h-[32px] rounded-full opacity-[1] text-sky-50 sm:w-[40px] sm:h-[40px] p-1"
                     src={visibleProfile[index]?.profilePicture}
                     alt={visibleProfile[index]?.name}
                   />
                 ) : (
-                  <Plus className="w-full h-full bg-sky-500 text-sky-50 sm:w-full p-1 sm:h-full" />
+                  <Plus className="w-[32px] h-[32px] bg-sky-500 text-sky-50 sm:w-[40px] sm:h-[40px]" />
                 )}
-                <p className="sm:w-max w-max p-1 min-w-[100] sm:h-max text-sky-50">
+                <p className="sm:w-max w-max p-1 min-w-[80px] sm:h-max text-sky-50">
                   {visibleProfile[index]?.name || "Unknown"}
                 </p>
               </div>
@@ -232,9 +221,9 @@ const GlobeLayout = () => {
           ))}
       </div>
 
-      <div className="flex flex-col justify-center items-center h-[100vh] w-[20%] px-4 bg-[#2c2c2c] text-white">
+      <div className="flex flex-col justify-center items-center sm:h-auto sm:py-2 py-4 lg:h-[100vh] w-full lg:w-[20%] px-4 bg-[#2c2c2c] text-white">
         <div className="flex w-full flex-row justify-between items-center border-b-[1px] border-[#6f6e6e] py-2">
-          <h1 className="text-xl">Globe Count</h1>
+          <h1 className="text-xl">Global User Count</h1>
         </div>
 
         <div className="w-full">
@@ -243,7 +232,7 @@ const GlobeLayout = () => {
               className="flex flex-row justify-between items-center border-b-[1px] border-[#6f6e6e] py-2"
               key={continent}
             >
-              <h2 className="text-white ">{continent}</h2>
+              <h2 className="text-white">{continent}</h2>
               <ul>{groupUsersByContinent(userData)[continent].length}</ul>
             </div>
           ))}

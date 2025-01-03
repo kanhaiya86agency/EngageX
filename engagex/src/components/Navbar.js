@@ -30,20 +30,20 @@ export default function Navbar() {
       onClick={() => toggleDrawer(false)}
     >
       <List>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <Link href="/" passHref>
+        <Link href="/" passHref>
+          <ListItem disablePadding>
+            <ListItemButton>
               <ListItemText primary="Home" />
-            </Link>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <Link href="/world" passHref>
-              <ListItemText primary="Globel" />
-            </Link>
-          </ListItemButton>
-        </ListItem>
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Link href="/world" passHref>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemText primary="Global" />
+            </ListItemButton>
+          </ListItem>
+        </Link>
       </List>
     </Box>
   );

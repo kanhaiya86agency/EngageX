@@ -8,7 +8,7 @@ import * as TWEEN from "@tweenjs/tween.js";
 import { drawThreeGeo } from "../../../public/threeGeoJSON";
 import { userData } from "../../../public/UserData";
 
-const GlobeLayout = () => {
+const Earth = () => {
   const canvasRef = useRef(null);
   const [visibleProfile, setVisibleProfile] = useState(null);
   const [popupPosition, setPopupPosition] = useState([{ x: 0, y: 0 }]);
@@ -241,4 +241,4 @@ const GlobeLayout = () => {
   );
 };
 
-export default GlobeLayout;
+export default Earth;

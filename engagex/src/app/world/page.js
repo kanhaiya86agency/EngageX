@@ -1,14 +1,14 @@
 import Navbar from "@/components/Navbar";
 import React from "react";
-import GlobeLayout from "./Earth";
+import Earth from "./Earth";
 
-const globel = () => {
+const Global = () => {
   return (
     <div>
       <Navbar />
-      <GlobeLayout />
+      <Earth />
     </div>
   );
 };
 
-export default globel;
+export default Global;

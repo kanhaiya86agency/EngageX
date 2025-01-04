@@ -205,14 +205,26 @@ const Earth = () => {
             >
               <div className="flex flex-row justify-start rounded-full items-center">
                 {visibleProfile[index]?.profilePicture ? (
-                  <div className="relative w-[100] h-[100]">
+                  // <div className="relative w-[100] h-[100]">
+                  //   <img
+                  //     className="top-[2] left-[2] w-[14px] h-[10px] rounded-full opacity-[1] text-sky-50 p-1"
+                  //     src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
+                  //     alt="locationPin"
+                  //   />
+                  //   <img
+                  //     className="absolute top-[5px] left-[15px] w-[13px] h-[12px] rounded-full opacity-[1] text-sky-50  p-1"
+                  //     src={visibleProfile[index]?.profilePicture}
+                  //     alt={visibleProfile[index]?.name}
+                  //   />
+                  // </div>
+                  <div className="relative w-24 h-24">
                     <img
-                      className="top-[2] left-[2] w-[14px] h-[10px] rounded-full opacity-[1] text-sky-50 p-1"
+                      className="absolute top-0.5 left-0.5 w-94 rounded-full opacity-100 text-sky-50 p-1"
                       src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
                       alt="locationPin"
                     />
                     <img
-                      className="absolute top-[5px] left-[15px] w-[13px] h-[12px] rounded-full opacity-[1] text-sky-50  p-1"
+                      className="absolute top-2 left-5 w-[64px] rounded-full opacity-100 text-sky-50 p-1"
                       src={visibleProfile[index]?.profilePicture}
                       alt={visibleProfile[index]?.name}
                     />

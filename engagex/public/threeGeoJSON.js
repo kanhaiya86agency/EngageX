@@ -276,7 +276,6 @@ export function drawThreeGeo({ json, radius, materialOptions }) {
     if (Math.random() > 0.5) {
       hue -= 0.3;
     }
-    console.log({ options });
     const lineMaterial = new LineMaterial({
       color: options.color,
       linewidth: 1,

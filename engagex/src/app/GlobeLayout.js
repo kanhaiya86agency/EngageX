@@ -1,19 +1,19 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Plus } from "lucide-react";
-import getStarfield from "../../../public/geoStarField";
+import { drawThreeGeo } from "./threeGeoJSON";
+import getStarfield from "./geoStarField";
 import * as TWEEN from "@tweenjs/tween.js";
-import { drawThreeGeo } from "../../../public/threeGeoJSON";
-import { userData } from "../../../public/UserData";
-import locationPin from "../../../public/location-pin1.png";
+import { userData } from "../../public/UserData";
 
-const Earth = () => {
+const GlobeLayout = () => {
   const canvasRef = useRef(null);
   const [visibleProfile, setVisibleProfile] = useState(null);
   const [popupPosition, setPopupPosition] = useState([{ x: 0, y: 0 }]);
   const [isInteracting, setIsInteracting] = useState(false);
+  const [rotationSpeed, setRotationSpeed] = useState(1.2);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -109,19 +109,17 @@ const Earth = () => {
       setVisibleProfile(visibleMarkers.map((marker) => marker.userData));
       setPopupPosition(validPopups);
     };
-
     const animate = () => {
       requestAnimationFrame(animate);
 
       if (!isInteracting) {
-        globeGroup.rotation.y += 0.015;
+        globeGroup.rotation.y += rotationSpeed;
       }
 
       updateVisibleMarkers(markers, camera, globeGroup);
 
       controls.update();
       renderer.render(scene, camera);
-      TWEEN.update();
     };
 
     fetch("./geojson/ne_110m_land.json")
@@ -196,7 +194,7 @@ const Earth = () => {
           popupPosition.map((position, index) => (
             <div
               key={index}
-              className="absolute transform -translate-x-1/2 rounded-full -translate-y-1/2"
+              className="absolute transform -translate-x-1/2 rounded-full opacity-[0.8] -translate-y-1/2 bg-[#2c2c2c] border border-sky-500 shadow-lg"
               style={{
                 left: `${position.x}px`,
                 top: `${position.y}px`,
@@ -205,20 +203,17 @@ const Earth = () => {
             >
               <div className="flex flex-row justify-start rounded-full items-center">
                 {visibleProfile[index]?.profilePicture ? (
-                  <div className="relative w-[100] h-[100]">
-                    <img
-                      className="absolute top-[2] left-[2] w-[94] h-[90] rounded-full opacity-[1] text-sky-50 p-1"
-                      src={"./location-pin1.png"}
-                    />
-                    <img
-                      className="absolute top-[6] left-[18] w-[63] h-[62] rounded-full opacity-[1] text-sky-50  p-1"
-                      src={visibleProfile[index]?.profilePicture}
-                      alt={visibleProfile[index]?.name}
-                    />
-                  </div>
+                  <img
+                    className="w-[32px] h-[32px] rounded-full opacity-[1] text-sky-50 sm:w-[40px] sm:h-[40px] p-1"
+                    src={visibleProfile[index]?.profilePicture}
+                    alt={visibleProfile[index]?.name}
+                  />
                 ) : (
                   <Plus className="w-[32px] h-[32px] bg-sky-500 text-sky-50 sm:w-[40px] sm:h-[40px]" />
                 )}
+                <p className="sm:w-max w-max p-1 min-w-[80px] sm:h-max text-sky-50">
+                  {visibleProfile[index]?.name || "Unknown"}
+                </p>
               </div>
             </div>
           ))}
@@ -245,4 +240,4 @@ const Earth = () => {
   );
 };
 
-export default Earth;
+export default GlobeLayout;

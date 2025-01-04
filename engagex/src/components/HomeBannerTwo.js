@@ -1,5 +1,8 @@
 "use client";
 
+import Image from "next/image";
+import comingSoonImage from "../../public/ComingSoon.png";
+
 export default function HomeBannerTwo() {
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black">
@@ -19,7 +22,11 @@ export default function HomeBannerTwo() {
           Stars Are Rehearsing....
         </h3>
         <div className="mt-5 mb-5">
-          <img src="./soon.png" alt="commit soon" className="w-[600px]" />
+          <Image
+            src={comingSoonImage}
+            alt="commit soon"
+            className="w-[600px]"
+          />
         </div>
         <button className="gradient-border-button mt-6 ">
           <span className="button-text">Join now</span>

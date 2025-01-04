@@ -7,8 +7,6 @@ import getStarfield from "../../../public/geoStarField";
 import * as TWEEN from "@tweenjs/tween.js";
 import { drawThreeGeo } from "../../../public/threeGeoJSON";
 import { userData } from "../../../public/UserData";
-// import locationPinBlue from "../../../public/location-pin-blue.png";
-import locationPinBlue from "@/assets/images/location-pin-blue.png";
 import Image from "next/image";
 
 const Earth = () => {
@@ -208,12 +206,10 @@ const Earth = () => {
               <div className="flex flex-row justify-start rounded-full items-center">
                 {visibleProfile[index]?.profilePicture ? (
                   <div className="relative w-[100] h-[100]">
-                    <Image
+                    <img
                       className="absolute top-[2] left-[2] w-[94] h-[90] rounded-full opacity-[1] text-sky-50 p-1"
-                      src={locationPinBlue}
+                      src="https://t3.ftcdn.net/jpg/05/83/96/22/360_F_583962262_5G5ewl75uZWW9KmsIjREuHSo1prjTbOU.jpg"
                       alt="locationPin"
-                      width={100}
-                      height={100}
                     />
                     <Image
                       className="absolute top-[6] left-[18] w-[63] h-[62] rounded-full opacity-[1] text-sky-50  p-1"

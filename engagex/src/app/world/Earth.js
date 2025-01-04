@@ -235,6 +235,13 @@ const Earth = () => {
         </div>
 
         <div className="w-full">
+          <Image
+            width={100}
+            height={100}
+            className=" top-[2] left-[2] w-[94] h-[90] rounded-full opacity-[1] text-sky-50 p-1"
+            src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
+            alt="locationPin"
+          />
           {Object.keys(groupUsersByContinent(userData)).map((continent) => (
             <div
               className="flex flex-row justify-between items-center border-b-[1px] border-[#6f6e6e] py-2"

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["easy-peasy.ai"], // Allow loading images from specific domains
+    domains: ["easy-peasy.ai", "goozzby-storage.s3.ap-south-1.amazonaws.com"], // Allow loading images from specific domains
   },
 };
 

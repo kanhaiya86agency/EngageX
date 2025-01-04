@@ -206,9 +206,11 @@ const Earth = () => {
               <div className="flex flex-row justify-start rounded-full items-center">
                 {visibleProfile[index]?.profilePicture ? (
                   <div className="relative w-[100] h-[100]">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       className="absolute top-[2] left-[2] w-[94] h-[90] rounded-full opacity-[1] text-sky-50 p-1"
-                      src="https://t3.ftcdn.net/jpg/05/83/96/22/360_F_583962262_5G5ewl75uZWW9KmsIjREuHSo1prjTbOU.jpg"
+                      src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
                       alt="locationPin"
                     />
                     <Image

@@ -10,12 +10,12 @@ export default function HomeBanner() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isScaled, setIsScaled] = useState(false);
   const videoRef = useRef(null);
-
+  // only fans are star missing in 3 number
   const slides = [
     {
-      text1: "EngageX App ",
-      text2: "For Every Moment!",
-      video: "./HomeBannerTwo.mp4",
+      text1: "An Exclusive",
+      text2: "Experience App!",
+      video: "./popcorn.mp4",
     },
     {
       text1: "Spotlighting Craft,",
@@ -23,14 +23,19 @@ export default function HomeBanner() {
       video: "./spotlight.mp4",
     },
     {
+      text1: "Only fan are",
+      text2: "STARMAKERS!",
+      video: "./Onlyfans.mp4",
+    },
+    {
       text1: "Stars rewards",
       text2: "True Fans!",
       video: "./money.mp4",
     },
     {
-      text1: "An Exclusive",
-      text2: "Experience App!",
-      video: "./popcorn.mp4",
+      text1: "EngageX App ",
+      text2: "For Every Moment!",
+      video: "./HomeBannerTwo.mp4",
     },
   ];
 
@@ -71,7 +76,7 @@ export default function HomeBanner() {
         autoPlay
         muted
         playsInline
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+        className={`absolute inset-0 h-full w-full object-fill transition-opacity duration-1000 ${
           isAnimating ? "opacity-50" : "opacity-100"
         }`}
         src={slides[currentIndex]?.video}

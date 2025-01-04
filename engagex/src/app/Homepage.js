@@ -5,6 +5,7 @@ import HomeBannerTwo from "@/components/HomeBannerTwo";
 import Navbar from "@/components/Navbar";
 import Earth from "./world/Earth";
 import { ArrowDown } from "lucide-react";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   const [currentSection, setCurrentSection] = useState(0);
@@ -64,7 +65,6 @@ export default function HomePage() {
 
       <Navbar />
 
-      {/* Sections */}
       <div id="section1" className="h-screen">
         <HomeBanner />
       </div>
@@ -73,6 +73,7 @@ export default function HomePage() {
       </div>
       <div id="section3" className="h-screen">
         <HomeBannerTwo />
+        <Footer />
       </div>
     </div>
   );

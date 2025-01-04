@@ -213,13 +213,13 @@ const Earth = () => {
                       src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
                       alt="locationPin"
                     />
-                    <Image
+                    {/* <Image
                       className="absolute top-[6] left-[18] w-[63] h-[62] rounded-full opacity-[1] text-sky-50  p-1"
                       src={visibleProfile[index]?.profilePicture}
                       alt={visibleProfile[index]?.name}
                       width={100}
                       height={100}
-                    />
+                    /> */}
                   </div>
                 ) : (
                   <Plus className="w-[32px] h-[32px] bg-sky-500 text-sky-50 sm:w-[40px] sm:h-[40px]" />

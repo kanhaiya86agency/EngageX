@@ -7,7 +7,8 @@ import getStarfield from "../../../public/geoStarField";
 import * as TWEEN from "@tweenjs/tween.js";
 import { drawThreeGeo } from "../../../public/threeGeoJSON";
 import { userData } from "../../../public/UserData";
-import locationPin from "../../../public/location-pin1.png";
+import locationPinBlue from "../../../public/location-pin-blue.png";
+import Image from "next/image";
 
 const Earth = () => {
   const canvasRef = useRef(null);
@@ -206,14 +207,19 @@ const Earth = () => {
               <div className="flex flex-row justify-start rounded-full items-center">
                 {visibleProfile[index]?.profilePicture ? (
                   <div className="relative w-[100] h-[100]">
-                    <img
+                    <Image
                       className="absolute top-[2] left-[2] w-[94] h-[90] rounded-full opacity-[1] text-sky-50 p-1"
-                      src={"./location-pin1.png"}
+                      src={locationPinBlue}
+                      alt="locationPin"
+                      width={100}
+                      height={100}
                     />
-                    <img
+                    <Image
                       className="absolute top-[6] left-[18] w-[63] h-[62] rounded-full opacity-[1] text-sky-50  p-1"
                       src={visibleProfile[index]?.profilePicture}
                       alt={visibleProfile[index]?.name}
+                      width={100}
+                      height={100}
                     />
                   </div>
                 ) : (

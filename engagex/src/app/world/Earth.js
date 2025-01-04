@@ -207,12 +207,12 @@ const Earth = () => {
                 {visibleProfile[index]?.profilePicture ? (
                   <div className="relative w-[100] h-[100]">
                     <img
-                      className="top-[2] left-[2] w-[94px] h-[90px] rounded-full opacity-[1] text-sky-50 p-1"
+                      className="top-[2] left-[2] w-[14px] h-[10px] rounded-full opacity-[1] text-sky-50 p-1"
                       src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
                       alt="locationPin"
                     />
                     <img
-                      className="absolute top-[5px] left-[15px] w-[63px] h-[62px] rounded-full opacity-[1] text-sky-50  p-1"
+                      className="absolute top-[5px] left-[15px] w-[13px] h-[12px] rounded-full opacity-[1] text-sky-50  p-1"
                       src={visibleProfile[index]?.profilePicture}
                       alt={visibleProfile[index]?.name}
                     />

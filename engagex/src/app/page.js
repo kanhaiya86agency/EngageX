@@ -1,9 +1,9 @@
-import HomeBanner from "./HomeBanner";
+import HomePage from "./Homepage";
 
 export default function Home() {
   return (
-    <div >
-   <HomeBanner/>
+    <div>
+      <HomePage />
     </div>
   );
 }

@@ -14,9 +14,12 @@ const Footer = () => {
         </div>
         {/* Social media icons */}
         <div className="flex space-x-4">
-          <a href=" " target="_blank" rel="noopener noreferrer" className="">
-            <img src="./facebook.png" alt="Facebook" className="w-[32px]" />
-          </a>
+          {/* <a href="" target="_blank" rel="noopener noreferrer" className=""> */}
+          <img src="./youtube.png" alt="youtube" className="w-[32px]" />
+          {/* </a> */}
+          {/* <a href="" target="_blank" rel="noopener noreferrer" className=""> */}
+          <img src="./facebook.png" alt="Facebook" className="w-[32px]" />
+          {/* </a> */}
           <a
             href="https://x.com/EngageX_world"
             target="_blank"

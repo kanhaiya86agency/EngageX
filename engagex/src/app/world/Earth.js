@@ -208,7 +208,7 @@ const Earth = () => {
                   <div className="relative w-[100] h-[100]">
                     <Image
                       className="absolute top-[2] left-[2] w-[94] h-[90] rounded-full opacity-[1] text-sky-50 p-1"
-                      src={"./location-pin-blue.png"}
+                      src={"./locationPinBlue.png"}
                       alt="locationPin"
                       width={100}
                       height={100}

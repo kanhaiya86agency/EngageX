@@ -7,7 +7,6 @@ import getStarfield from "../../../public/geoStarField";
 import * as TWEEN from "@tweenjs/tween.js";
 import { drawThreeGeo } from "../../../public/threeGeoJSON";
 import { userData } from "../../../public/UserData";
-// import locationPinBlue from "../../../public/location-pin-blue.png";
 import locationPinBlue from "@/assets/images/location-pin-blue.png";
 import Image from "next/image";
 

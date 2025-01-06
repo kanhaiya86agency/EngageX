@@ -5,8 +5,8 @@ import comingSoonImage from "../../public/ComingSoon.png";
 
 export default function HomeBannerTwo() {
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
-      <div className="absolute inset-0 h-full w-full">
+    <div className="relative h-screen w-full overflow-hidden  bg-indigo-600 bg-opacity-25">
+      <div className="absolute inset-0 h-full w-full ">
         <video
           autoPlay
           loop
@@ -32,7 +32,7 @@ export default function HomeBannerTwo() {
           <span className="button-text">Join now</span>
         </button>
       </div>
-      <style jsx>{`
+      <style>{`
         .gradient-border-button {
           position: relative;
           display: inline-flex;

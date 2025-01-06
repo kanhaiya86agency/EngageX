@@ -53,7 +53,7 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-50">
         <Image src={logo} alt="EngageX" className="lg:w-[200px] w-[120px]" />
         <div className="flex space-x-6">
-          <button className="px-6 py-2 bg-transparent text-white text-sm font-medium border border-white rounded-full transition">
+          <button className="px-6 py-2 bg-white text-black text-sm font-medium border border-white rounded-full shadow-md hover:shadow-lg focus:shadow-xl transition-shadow">
             Join Now
           </button>
           <button

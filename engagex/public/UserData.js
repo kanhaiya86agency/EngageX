@@ -5,8 +5,7 @@ export const userData = [
     latitude: 37.7749,
     longitude: -122.4194,
     continent: "North America",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user1.jpg",
   },
   {
     id: 2,
@@ -14,8 +13,7 @@ export const userData = [
     latitude: 51.509865,
     longitude: -0.118092,
     continent: "Europe",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user2.jpg",
   },
   {
     id: 3,
@@ -23,8 +21,7 @@ export const userData = [
     latitude: 35.6895,
     longitude: 139.6917,
     continent: "Asia",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user4.jpg",
   },
   {
     id: 4,
@@ -32,8 +29,7 @@ export const userData = [
     latitude: -33.865143,
     longitude: 151.2099,
     continent: "Australia",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user3.jpg",
   },
   {
     id: 5,
@@ -41,8 +37,7 @@ export const userData = [
     latitude: 55.7558,
     longitude: 37.6173,
     continent: "Europe",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user1.jpg",
   },
   {
     id: 6,
@@ -50,17 +45,15 @@ export const userData = [
     latitude: -22.9068,
     longitude: -43.1729,
     continent: "South America",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user6.jpg",
   },
   {
     id: 7,
-    name: "George Harris",
+    name: "Georgia Harris",
     latitude: 40.712776,
     longitude: -74.005974,
     continent: "North America",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user7.jpg",
   },
   {
     id: 8,
@@ -68,8 +61,7 @@ export const userData = [
     latitude: 48.8566,
     longitude: 2.3522,
     continent: "Europe",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user5.jpg",
   },
   {
     id: 9,
@@ -77,8 +69,7 @@ export const userData = [
     latitude: 41.902782,
     longitude: 12.496366,
     continent: "Europe",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user4.jpg",
   },
   {
     id: 10,
@@ -86,8 +77,7 @@ export const userData = [
     latitude: -1.292066,
     longitude: 36.821945,
     continent: "Africa",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user1.jpg",
   },
   {
     id: 11,
@@ -95,8 +85,7 @@ export const userData = [
     latitude: 19.432608,
     longitude: -99.133209,
     continent: "North America",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user9.jpg",
   },
   {
     id: 12,
@@ -104,8 +93,7 @@ export const userData = [
     latitude: -34.603722,
     longitude: -58.381592,
     continent: "South America",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user2.jpg",
   },
   {
     id: 13,
@@ -113,8 +101,7 @@ export const userData = [
     latitude: 39.9042,
     longitude: 116.4074,
     continent: "Asia",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user5.jpg",
   },
   {
     id: 14,
@@ -122,8 +109,7 @@ export const userData = [
     latitude: -25.746111,
     longitude: 28.188057,
     continent: "Africa",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user8.jpg",
   },
   {
     id: 15,
@@ -131,7 +117,6 @@ export const userData = [
     latitude: 20.5937,
     longitude: 78.9629,
     continent: "Asia",
-    profilePicture:
-      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
+    profilePicture: "./userDataImages/user1.jpg",
   },
 ];

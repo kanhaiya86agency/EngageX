@@ -7,7 +7,7 @@ import getStarfield from "../../../public/geoStarField";
 import * as TWEEN from "@tweenjs/tween.js";
 import { drawThreeGeo } from "../../../public/threeGeoJSON";
 import { userData } from "../../../public/UserData";
-import Image from "next/image";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const Earth = () => {
   const canvasRef = useRef(null);
@@ -33,10 +33,14 @@ const Earth = () => {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.enableZoom = true;
+    controls.enableZoom = false;
+    controls.enablePan = false;
+    controls.rotateSpeed = 1.0;
+    controls.zoomSpeed = 0.5;
 
-    controls.minDistance = 1.2;
-    controls.maxDistance = 3;
+    const aspectRatio = canvas.clientWidth / canvas.clientHeight;
+    controls.minDistance = 1.2 * aspectRatio; // Adjust according to aspect ratio
+    controls.maxDistance = 3 * aspectRatio; // Adjust according to aspect ratio
     controls.addEventListener("start", () => setIsInteracting(true));
     controls.addEventListener("end", () => setIsInteracting(false));
 
@@ -181,15 +185,38 @@ const Earth = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between bg-[#2c2c2c] px-4 py-4 lg:px-10 relative w-full ">
-      <div className="flex justify-between items-center sm:h-auto w-full lg:w-[20%] px-4 bg-transparent text-white">
-        <div className="flex justify-between text-lg items-center w-full border-y-[1px] border-[#6f6e6e] py-2">
-          <p>Total Users</p>
-          <p>{userData.length}</p>
+    <div className="flex flex-col lg:flex-row justify-center bg-[#2c2c2c] h-full sm:h-auto px-4 py-4 lg:px-10 relative w-full">
+      <div className="flex flex-col justify-center items-start gap-3 w-full lg:w-[30%] lg:h-[100vh] px-4 py-4 bg-transparent text-white ">
+        <p className="border-b-[1px] border-sky-500 w-full text-[28px] font-semibold pb-3">
+          Our Target
+        </p>
+        <div className="flex justify-between font-mono text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
+          <p className="text-[32px]">
+            <AnimatedCounter from={100} to={224000000} />{" "}
+            <span className="font-sans" style={{ fontSize: "18px" }}>
+              Creators
+            </span>
+          </p>
+        </div>
+        <div className="flex justify-between font-mono text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
+          <p className="text-[32px]">
+            <AnimatedCounter from={0} to={1750000} />{" "}
+            <span className="font-sans" style={{ fontSize: "18px" }}>
+              Community
+            </span>
+          </p>
+        </div>
+        <div className="flex justify-between font-mono text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
+          <p className="text-[32px]">
+            <AnimatedCounter from={0} to={100000000} />{" "}
+            <span className="font-sans" style={{ fontSize: "18px" }}>
+              Fans
+            </span>
+          </p>
         </div>
       </div>
 
-      <div className="relative flex items-center justify-center h-[50vh] lg:h-[100vh] rounded-full w-full lg:w-[60%]">
+      <div className="relative flex items-center justify-center h-[50vh] sm:h-auto lg:h-[100vh] rounded-full w-full lg:w-[70%]">
         <canvas ref={canvasRef} className="w-full h-full" />
         {visibleProfile &&
           popupPosition &&
@@ -205,26 +232,14 @@ const Earth = () => {
             >
               <div className="flex flex-row justify-start rounded-full items-center">
                 {visibleProfile[index]?.profilePicture ? (
-                  // <div className="relative w-[100] h-[100]">
-                  //   <img
-                  //     className="top-[2] left-[2] w-[14px] h-[10px] rounded-full opacity-[1] text-sky-50 p-1"
-                  //     src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
-                  //     alt="locationPin"
-                  //   />
-                  //   <img
-                  //     className="absolute top-[5px] left-[15px] w-[13px] h-[12px] rounded-full opacity-[1] text-sky-50  p-1"
-                  //     src={visibleProfile[index]?.profilePicture}
-                  //     alt={visibleProfile[index]?.name}
-                  //   />
-                  // </div>
                   <div className="relative w-24 h-24">
                     <img
-                      className="absolute top-0.5 left-0.5 w-94 rounded-full opacity-100 text-sky-50 p-1"
+                      className="absolute lg:top-0.5 left-3.5 lg:left-0.5 lg:w-[92] w-[60px] rounded-full opacity-100 text-sky-50 p-1"
                       src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
                       alt="locationPin"
                     />
                     <img
-                      className="absolute top-2 left-5 w-[64px] rounded-full opacity-100 text-sky-50 p-1"
+                      className="absolute top-1 lg:top-1 left-6 lg:left-4 lg:w-[64px] w-[40px] rounded-full opacity-100 text-sky-50 p-1"
                       src={visibleProfile[index]?.profilePicture}
                       alt={visibleProfile[index]?.name}
                     />
@@ -235,24 +250,6 @@ const Earth = () => {
               </div>
             </div>
           ))}
-      </div>
-
-      <div className="flex flex-col justify-center items-center sm:h-auto sm:py-2 py-4 lg:h-[100vh] w-full lg:w-[20%] px-4 bg-[#2c2c2c] text-white">
-        <div className="flex w-full flex-row justify-between items-center border-b-[1px] border-[#6f6e6e] py-2">
-          <h1 className="text-xl">Global User Count</h1>
-        </div>
-
-        <div className="w-full">
-          {Object.keys(groupUsersByContinent(userData)).map((continent) => (
-            <div
-              className="flex flex-row justify-between items-center border-b-[1px] border-[#6f6e6e] py-2"
-              key={continent}
-            >
-              <h2 className="text-white">{continent}</h2>
-              <ul>{groupUsersByContinent(userData)[continent].length}</ul>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );

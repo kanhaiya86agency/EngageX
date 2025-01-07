@@ -78,11 +78,7 @@ export default function HomePage() {
           }}
         />
       </button>
-
-      {/* Navbar */}
       <Navbar />
-
-      {/* Sections */}
       <div id="section1" className="h-screen">
         <HomeBanner />
       </div>

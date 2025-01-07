@@ -48,14 +48,6 @@ export const userData = [
     profilePicture: "./userDataImages/user6.jpg",
   },
   {
-    id: 7,
-    name: "Georgia Harris",
-    latitude: 40.712776,
-    longitude: -74.005974,
-    continent: "North America",
-    profilePicture: "./userDataImages/user7.jpg",
-  },
-  {
     id: 8,
     name: "Hannah White",
     latitude: 48.8566,

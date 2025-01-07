@@ -10,7 +10,6 @@ export default function HomeBanner() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isScaled, setIsScaled] = useState(false);
   const videoRef = useRef(null);
-  // only fans are star missing in 3 number
   const slides = [
     {
       text1: "An Exclusive",
@@ -83,7 +82,6 @@ export default function HomeBanner() {
         ref={videoRef}
         onEnded={handleVideoEnd}
       ></video>
-
       <div
         className={`absolute inset-0 flex items-center justify-center transition-transform duration-1000 ease-in ${
           isScaled && "scale-[17]"

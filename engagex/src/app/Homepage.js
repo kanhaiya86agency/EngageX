@@ -64,7 +64,7 @@ export default function HomePage() {
         onClick={handleScroll}
       >
         <ArrowDown
-          size={35}
+          size={45}
           style={{
             backgroundColor: "white",
             color: "black",
@@ -78,11 +78,7 @@ export default function HomePage() {
           }}
         />
       </button>
-
-      {/* Navbar */}
       <Navbar />
-
-      {/* Sections */}
       <div id="section1" className="h-screen">
         <HomeBanner />
       </div>

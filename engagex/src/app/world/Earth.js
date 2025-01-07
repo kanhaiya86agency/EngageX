@@ -190,7 +190,7 @@ const Earth = () => {
         <p className="border-b-[1px] border-sky-500 w-full text-[28px] font-semibold pb-3">
           Our Target
         </p>
-        <div className="flex justify-between font-mono text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
+        <div className="flex justify-between font-sans text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
           <p className="text-[32px]">
             <AnimatedCounter from={100} to={224000000} />{" "}
             <span className="font-sans" style={{ fontSize: "18px" }}>
@@ -198,7 +198,7 @@ const Earth = () => {
             </span>
           </p>
         </div>
-        <div className="flex justify-between font-mono text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
+        <div className="flex justify-between font-sans text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
           <p className="text-[32px]">
             <AnimatedCounter from={0} to={1750000} />{" "}
             <span className="font-sans" style={{ fontSize: "18px" }}>
@@ -206,7 +206,7 @@ const Earth = () => {
             </span>
           </p>
         </div>
-        <div className="flex justify-between font-mono text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
+        <div className="flex justify-between font-sans text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
           <p className="text-[32px]">
             <AnimatedCounter from={0} to={100000000} />{" "}
             <span className="font-sans" style={{ fontSize: "18px" }}>
@@ -234,12 +234,12 @@ const Earth = () => {
                 {visibleProfile[index]?.profilePicture ? (
                   <div className="relative w-24 h-24">
                     <img
-                      className="absolute lg:top-0.5 left-3.5 lg:left-0.5 lg:w-[92] w-[60px] rounded-full opacity-100 text-sky-50 p-1"
+                      className="lg:w-[92px] w-[60px] rounded-full opacity-100 text-sky-50 p-1"
                       src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
                       alt="locationPin"
                     />
                     <img
-                      className="absolute top-1 lg:top-1 left-6 lg:left-4 lg:w-[64px] w-[40px] rounded-full opacity-100 text-sky-50 p-1"
+                      className="absolute top-[3px] lg:top-[5px] left-[10px] lg:left-[16px] lg:w-[60px] w-[40px] rounded-full opacity-100 text-sky-50 p-1"
                       src={visibleProfile[index]?.profilePicture}
                       alt={visibleProfile[index]?.name}
                     />

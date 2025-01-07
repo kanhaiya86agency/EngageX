@@ -75,7 +75,7 @@ export default function HomeBanner() {
         autoPlay
         muted
         playsInline
-        className={`absolute inset-0 h-full w-full object-fill transition-opacity duration-1000 ${
+        className={`absolute inset-0 h-full w-full object-cover lg:object-cover transition-opacity duration-1000 ${
           isAnimating ? "opacity-50" : "opacity-100"
         }`}
         src={slides[currentIndex]?.video}
@@ -89,11 +89,9 @@ export default function HomeBanner() {
       >
         <svg
           onClick={handleStarClick}
-          width="360"
-          height="310"
           viewBox="0 0 408 362"
           xmlns="http://www.w3.org/2000/svg"
-          className="transition-transform duration-1000 cursor-pointer"
+          className="transition-transform duration-1000 cursor-pointer lg:w-[360] w-[300] lg:h-[310] h-[300]"
           style={{ pointerEvents: "auto" }}
         >
           <defs>
@@ -113,14 +111,15 @@ export default function HomeBanner() {
               muted
               loop
               playsInline
-              className="w-full h-full object-none"
+              className={`absolute inset-0 h-full w-full object-cover lg:object-cover transition-opacity duration-1000 ${
+                isScaled ? "opacity-0" : "opacity-100"
+              }`}
               src={slides[(currentIndex + 1) % slides.length]?.video}
             ></video>
           </foreignObject>
         </svg>
       </div>
-
-      <div className="absolute bottom-8 left-10 w-[95%]">
+      <div className="absolute bottom-[230px] lg:bottom-8 left-5 lg:left-10 w-[95%]">
         <motion.div
           key={`text1-${currentIndex}`}
           initial={{
@@ -135,8 +134,8 @@ export default function HomeBanner() {
             duration: 0.8,
           }}
         >
-          <div className="flex justify-start">
-            <h1 className="text-white text-[125px] font-medium">
+          <div className="flex justify-center lg:justify-start">
+            <h1 className="text-white text-[30px] lg:text-[125px] font-medium">
               <GradualSpacing text={slides[currentIndex].text1} />
             </h1>
           </div>
@@ -155,8 +154,8 @@ export default function HomeBanner() {
             duration: 0.8,
           }}
         >
-          <div className="flex justify-end mt-[-20px]">
-            <h1 className="text-white text-[125px] font-medium">
+          <div className="flex justify-center lg:justify-end mt-[0px] lg:mt-[-20px]">
+            <h1 className="text-white text-[40px] lg:text-[125px] font-medium">
               <RightAnimation text={slides[currentIndex].text2} />
             </h1>
           </div>

@@ -60,7 +60,7 @@ export default function HomePage() {
     <div className="relative h-screen w-full">
       {/* Scroll Button */}
       <button
-        className="fixed bottom-10 left-10 z-10 animate-bounce"
+        className="fixed bottom-5 lg:bottom-10 left-5 lg:left-10 z-10 animate-bounce"
         onClick={handleScroll}
       >
         <ArrowDown

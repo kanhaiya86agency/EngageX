@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Earth from "./world/Earth";
 import { ArrowDown } from "lucide-react";
 import Footer from "@/components/Footer";
+import HomeDemoBanner from "@/components/HomeDemoBanner";
 
 export default function HomePage() {
   const [currentSection, setCurrentSection] = useState(0);

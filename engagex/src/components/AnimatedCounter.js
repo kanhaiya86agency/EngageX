@@ -13,10 +13,16 @@ const AnimatedCounter = ({ from, to, animationOptions }) => {
     if (!element) return;
     if (!inView) return;
 
-    element.textContent = String(from).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    element.textContent = `${String(from).replace(
+      /\B(?=(\d{3})+(?!\d))/g,
+      ","
+    )}+`;
 
     if (window.matchMedia("(prefers-reduced-motion)").matches) {
-      element.textContent = String(to).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      element.textContent = `${String(to).replace(
+        /\B(?=(\d{3})+(?!\d))/g,
+        ","
+      )}+`;
       return;
     }
 
@@ -25,9 +31,9 @@ const AnimatedCounter = ({ from, to, animationOptions }) => {
       ease: "easeInOut",
       ...animationOptions,
       onUpdate(value) {
-        element.textContent = Number(value)
+        element.textContent = `${Number(value)
           .toFixed(0)
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}+`;
       },
     });
 

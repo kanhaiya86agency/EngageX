@@ -1,0 +1,78 @@
+/* Center the SVG on the screen */
+.svg-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgClass {
+  background: transparent;
+}
+
+.animate {
+  transform-origin: center;
+  animation: scaleUp 1.5s forwards;
+}
+
+@media (max-width: 768px) {
+  .svgClass {
+    width: 400;
+    height: 300;
+    margin: auto;
+  }
+
+  .animate {
+    transform-origin: center;
+    animation: scaleUp 1.5s forwards;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .svgClass {
+    width: 400; /* Adjust width for tablet devices */
+    height: 300;
+    margin: auto;
+  }
+  .animate {
+    transform-origin: center;
+    animation: mobileScaleUp 1.5s forwards;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: translate(0%, 0px) scale(0.25);
+  }
+  10% {
+    transform: translate(10%, 0px) scale(0.75);
+  }
+  20% {
+    transform: translate(20%, 0px) scale(1.25);
+  }
+  30% {
+    transform: translate(30%, 0px) scale(1.75);
+  }
+  40% {
+    transform: translate(40%, 0px) scale(2.25);
+  }
+  50% {
+    transform: translate(57.5%, 0px) scale(2.75);
+  }
+  60% {
+    transform: translate(72.5%, 0px) scale(3.25);
+  }
+  70% {
+    transform: translate(87.5%, 0px) scale(3.75);
+  }
+  80% {
+    transform: translate(102.5%, 0px) scale(4.25);
+  }
+  90% {
+    transform: translate(117.5%, 0px) scale(4.75);
+  }
+  100% {
+    transform: translate(140%, 0px) scale(5);
+  }
+}

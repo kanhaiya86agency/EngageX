@@ -87,8 +87,10 @@ export default function HomeBanner() {
           xmlns="http://www.w3.org/2000/svg"
           className={`transition-transform duration-1000 ease-in ${
             isScaled && "scale-[17]"
-          } cursor-pointer lg:w-[360] w-[300] lg:h-[310] h-[300]`}
+          } cursor-pointer lg:w-[360px] w-[300px] lg:h-[310px] h-[300px]`}
           style={{ pointerEvents: "auto" }}
+          width={468}
+          height={362}
         >
           <defs>
             <clipPath
@@ -117,7 +119,7 @@ export default function HomeBanner() {
               muted
               loop
               playsInline
-              className={`absolute inset-0 h-full w-full object-none lg:object-none transition-opacity duration-1000  `}
+              className={`inset-0 h-full w-full object-none lg:object-none transition-opacity duration-1000`}
               src={slides[(currentIndex + 1) % slides.length]?.video}
             ></video>
           </foreignObject>

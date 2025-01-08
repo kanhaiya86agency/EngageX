@@ -163,6 +163,22 @@ const Earth = () => {
     };
   }, []);
 
+  const preloadImages = (imageUrls) => {
+    imageUrls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+    });
+  };
+
+  useEffect(() => {
+    if (userData?.length > 0) {
+      const imageArray = userData?.map((el) => {
+        return el?.profilePicture;
+      });
+      preloadImages(imageArray);
+    }
+  }, []);
+
   const getPositionFromLatLon = (lat, lon, radius = 0.6) => {
     const phi = (90 - lat) * (Math.PI / 180);
     const theta = (lon + 180) * (Math.PI / 180);
@@ -188,7 +204,7 @@ const Earth = () => {
     <div className="flex flex-col lg:flex-row justify-center bg-[#2c2c2c] h-full sm:h-auto px-4 py-4 lg:px-10 relative w-full">
       <div className="flex flex-col justify-center items-start gap-3 w-full lg:w-[30%] lg:h-[100vh] px-4 py-4 bg-transparent text-white ">
         <p className="border-b-[1px] border-sky-500 w-full text-[28px] font-semibold pb-3">
-          Our Target
+          Total Market Size
         </p>
         <div className="flex justify-between font-sans text-lg items-center w-auto border-b-[1px] border-sky-500 py-2">
           <p className="text-[32px]">
@@ -202,7 +218,7 @@ const Earth = () => {
           <p className="text-[32px]">
             <AnimatedCounter from={0} to={1750000} />{" "}
             <span className="font-sans" style={{ fontSize: "18px" }}>
-              Community
+              Communities
             </span>
           </p>
         </div>
@@ -222,7 +238,7 @@ const Earth = () => {
           popupPosition &&
           popupPosition.map((position, index) => (
             <div
-              key={index}
+              key={position.x}
               className="absolute transform -translate-x-1/2 rounded-full -translate-y-1/2"
               style={{
                 left: `${position.x}px`,
@@ -233,16 +249,20 @@ const Earth = () => {
               <div className="flex flex-row justify-start rounded-full items-center">
                 {visibleProfile[index]?.profilePicture ? (
                   <div className="relative w-24 h-24">
-                    <img
-                      className="lg:w-[92px] w-[60px] rounded-full opacity-100 text-sky-50 p-1"
-                      src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
-                      alt="locationPin"
-                    />
-                    <img
-                      className="absolute top-[3px] lg:top-[5px] left-[10px] lg:left-[16px] lg:w-[60px] w-[40px] rounded-full opacity-100 text-sky-50 p-1"
-                      src={visibleProfile[index]?.profilePicture}
-                      alt={visibleProfile[index]?.name}
-                    />
+                    {visibleProfile[index]?.profilePicture && (
+                      <>
+                        <img
+                          className="lg:w-[92px] w-[60px] rounded-full opacity-100 text-sky-50 p-1"
+                          src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
+                          alt="locationPin"
+                        />
+                        <img
+                          className="absolute top-[3px] lg:top-[5px] left-[10px] lg:left-[16px] lg:w-[60px] w-[40px] rounded-full opacity-100 text-sky-50 p-1"
+                          src={visibleProfile[index]?.profilePicture}
+                          alt={visibleProfile[index]?.name}
+                        />
+                      </>
+                    )}
                   </div>
                 ) : (
                   <Plus className="w-[32px] h-[32px] bg-sky-500 text-sky-50 sm:w-[40px] sm:h-[40px]" />

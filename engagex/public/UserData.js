@@ -31,14 +31,7 @@ export const userData = [
     continent: "Australia",
     profilePicture: "./userDataImages/user3.jpg",
   },
-  {
-    id: 5,
-    name: "Ethan Walker",
-    latitude: 55.7558,
-    longitude: 37.6173,
-    continent: "Europe",
-    profilePicture: "./userDataImages/user1.jpg",
-  },
+
   {
     id: 6,
     name: "Fiona Taylor",
@@ -62,14 +55,6 @@ export const userData = [
     longitude: 12.496366,
     continent: "Europe",
     profilePicture: "./userDataImages/user4.jpg",
-  },
-  {
-    id: 10,
-    name: "Jack Wilson",
-    latitude: -1.292066,
-    longitude: 36.821945,
-    continent: "Africa",
-    profilePicture: "./userDataImages/user1.jpg",
   },
   {
     id: 11,

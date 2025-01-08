@@ -125,47 +125,49 @@ export default function HomeBanner() {
           </foreignObject>
         </svg>
       </div>
-      <div className="absolute bottom-[230px] lg:bottom-8 left-5 lg:left-10 w-[95%]">
-        <motion.div
-          key={`text1-${currentIndex}`}
-          initial={{
-            x: -230,
-            opacity: 0,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-        >
-          <div className="flex justify-center lg:justify-start">
-            <h1 className="text-white text-[30px] lg:text-[125px] font-medium">
-              <GradualSpacing text={slides[currentIndex].text1} />
-            </h1>
-          </div>
-        </motion.div>
-        <motion.div
-          key={`text2-${currentIndex}`}
-          initial={{
-            x: 230,
-            opacity: 0,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-        >
-          <div className="flex justify-center lg:justify-end mt-[0px] lg:mt-[-20px]">
-            <h1 className="text-white text-[40px] lg:text-[125px] font-medium">
-              <RightAnimation text={slides[currentIndex].text2} />
-            </h1>
-          </div>
-        </motion.div>
+      <div className="absolute bottom-[230px] lg:bottom-8 m-auto w-full">
+        <div className="w-[90%] m-auto">
+          <motion.div
+            key={`text1-${currentIndex}`}
+            initial={{
+              x: -230,
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+          >
+            <div className="flex justify-center lg:justify-start">
+              <h1 className="text-white text-[20px] lg:text-[125px] font-medium">
+                <GradualSpacing text={slides[currentIndex].text1} />
+              </h1>
+            </div>
+          </motion.div>
+          <motion.div
+            key={`text2-${currentIndex}`}
+            initial={{
+              x: 230,
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+          >
+            <div className="flex justify-center lg:justify-end mt-[0px] lg:mt-[-20px]">
+              <h1 className="text-white text-[30px] lg:text-[125px] font-medium">
+                <RightAnimation text={slides[currentIndex].text2} />
+              </h1>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -56,14 +56,14 @@ export const userData = [
     continent: "Europe",
     profilePicture: "./userDataImages/user4.jpg",
   },
-  {
-    id: 11,
-    name: "Kim Clark",
-    latitude: 19.432608,
-    longitude: -99.133209,
-    continent: "North America",
-    profilePicture: "./userDataImages/user9.jpg",
-  },
+  // {
+  //   id: 11,
+  //   name: "Kim Clark",
+  //   latitude: 19.432608,
+  //   longitude: -99.133209,
+  //   continent: "North America",
+  //   profilePicture: "./userDataImages/user9.jpg",
+  // },
   {
     id: 12,
     name: "Liam Lewis",

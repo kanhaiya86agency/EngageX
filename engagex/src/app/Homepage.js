@@ -1,18 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import HomeBanner from "@/components/HomeBanner";
 import HomeBannerTwo from "@/components/HomeBannerTwo";
 import Navbar from "@/components/Navbar";
 import Earth from "./world/Earth";
 import { ArrowDown } from "lucide-react";
 import Footer from "@/components/Footer";
-import HomeDemoBanner from "@/components/HomeDemoBanner";
+import { motion, useInView } from "framer-motion";
 
 export default function HomePage() {
   const [currentSection, setCurrentSection] = useState(0);
   const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
 
   const sections = ["section1", "section2", "section3"];
+  const sectionRefs = sections.map(() => useRef(null)); // Create refs for all sections
 
   const handleScroll = () => {
     let nextSection;
@@ -40,7 +41,7 @@ export default function HomePage() {
 
     setCurrentSection(nextSection);
   };
-  console.log({ isNavbarScrolled });
+
   useEffect(() => {
     const handleScrollEvent = () => {
       const scrollPosition = window.scrollY;
@@ -82,17 +83,47 @@ export default function HomePage() {
         />
       </button>
       <Navbar isNavbarScrolled={isNavbarScrolled} />
-      <div id="section1" className="h-screen">
+      <div id="section1" className="h-screen" ref={sectionRefs[0]}>
         <HomeBanner />
       </div>
-      <div id="section2" className="h-screen">
-        <Earth />
+      <div id="section2" className="h-screen" ref={sectionRefs[1]}>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{
+            opacity: useInView(sectionRefs[1], { margin: "0px 0px -200px 0px" })
+              ? 1
+              : 0,
+            y: useInView(sectionRefs[1], { margin: "0px 0px -200px 0px" })
+              ? 0
+              : 100,
+          }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <Earth />
+        </motion.div>
       </div>
-      <div id="section3" className="min-h-screen flex flex-col justify-between">
-        <div className="flex-grow">
-          <HomeBannerTwo />
-        </div>
-        <Footer />
+      <div
+        id="section3"
+        className="min-h-screen flex flex-col justify-between"
+        ref={sectionRefs[2]}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{
+            opacity: useInView(sectionRefs[2], { margin: "0px 0px -200px 0px" })
+              ? 1
+              : 0,
+            y: useInView(sectionRefs[2], { margin: "0px 0px -200px 0px" })
+              ? 0
+              : 100,
+          }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <div className="flex-grow">
+            <HomeBannerTwo />
+          </div>
+          <Footer />
+        </motion.div>
       </div>
     </div>
   );

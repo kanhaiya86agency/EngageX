@@ -10,6 +10,7 @@ import HomeDemoBanner from "@/components/HomeDemoBanner";
 
 export default function HomePage() {
   const [currentSection, setCurrentSection] = useState(0);
+  const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
 
   const sections = ["section1", "section2", "section3"];
 
@@ -39,7 +40,7 @@ export default function HomePage() {
 
     setCurrentSection(nextSection);
   };
-
+  console.log({ isNavbarScrolled });
   useEffect(() => {
     const handleScrollEvent = () => {
       const scrollPosition = window.scrollY;
@@ -50,6 +51,7 @@ export default function HomePage() {
       if (newSection !== currentSection) {
         setCurrentSection(newSection);
       }
+      setIsNavbarScrolled(scrollPosition > 0);
     };
 
     window.addEventListener("scroll", handleScrollEvent);
@@ -79,7 +81,7 @@ export default function HomePage() {
           }}
         />
       </button>
-      <Navbar />
+      <Navbar isNavbarScrolled={isNavbarScrolled} />
       <div id="section1" className="h-screen">
         <HomeBanner />
       </div>

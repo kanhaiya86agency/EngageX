@@ -10,7 +10,9 @@ import ListItemText from "@mui/material/ListItemText";
 import hamburger from "../../public/Hamburger.png";
 import logo from "../../public/engagex-logo.png";
 import Link from "next/link";
-export default function Navbar() {
+import { SquareX } from "lucide-react";
+
+export default function Navbar({ isNavbarScrolled }) {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => {
@@ -49,8 +51,12 @@ export default function Navbar() {
   );
 
   return (
-    <div>
-      <div className="fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-50">
+    <>
+      <div
+        className={`fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-2 z-10 transition-all duration-700 ${
+          isNavbarScrolled ? "bg-black bg-opacity-75" : "bg-transparent"
+        }`}
+      >
         <Image src={logo} alt="EngageX" className="lg:w-[200px] w-[120px]" />
         <div className="flex space-x-6">
           <button className="px-6 py-2 bg-white text-black text-sm font-medium border border-white rounded-full shadow-md hover:shadow-lg focus:shadow-xl transition-shadow">
@@ -58,9 +64,9 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => toggleDrawer(true)}
-            className="px-6 py-2 bg-white text-black text-sm font-medium border border-white rounded-full flex items-center space-x-2 transition"
+            className="px-3 lg:px-6 py-2 bg-white text-black text-sm font-medium border border-white rounded-full flex items-center space-x-0 lg:space-x-2 transition"
           >
-            <span>Menu</span>
+            <span className="hidden lg:block">Menu</span>
             <Image src={hamburger} alt="hamburger" className="w-[20px]" />
           </button>
         </div>
@@ -71,8 +77,11 @@ export default function Navbar() {
         open={drawerOpen}
         onClose={() => toggleDrawer(false)}
       >
+        <div className="flex flex-dir ">
+          <SquareX className="w-[20px]" />
+        </div>
         {DrawerList}
       </Drawer>
-    </div>
+    </>
   );
 }

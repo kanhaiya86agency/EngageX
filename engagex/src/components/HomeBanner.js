@@ -142,7 +142,7 @@ export default function HomeBanner() {
             }}
           >
             <div className="flex justify-center lg:justify-start">
-              <h1 className="text-white text-[20px] lg:text-[125px] font-medium">
+              <h1 className="text-white text-[35px] sm:text-[30px] lg:text-[125px] font-medium">
                 <GradualSpacing text={slides[currentIndex].text1} />
               </h1>
             </div>
@@ -162,7 +162,7 @@ export default function HomeBanner() {
             }}
           >
             <div className="flex justify-center lg:justify-end mt-[0px] lg:mt-[-20px]">
-              <h1 className="text-white text-[30px] lg:text-[125px] font-medium">
+              <h1 className="text-white text-[35px] sm:text-[30px] lg:text-[125px] font-medium">
                 <RightAnimation text={slides[currentIndex].text2} />
               </h1>
             </div>

@@ -17,7 +17,7 @@ export default function HomeBannerTwo() {
         ></video>
       </div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-5">
         <h3 className="text-white text-2xl md:text-[55px] mb-2">
           Stars Are Rehearsing....
         </h3>

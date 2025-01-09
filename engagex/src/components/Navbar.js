@@ -53,7 +53,7 @@ export default function Navbar({ isNavbarScrolled }) {
   return (
     <>
       <div
-        className={`fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-2 z-10 transition-all duration-700 ${
+        className={`fixed top-0 left-0 right-0 flex justify-between items-center px-3 lg:px-6 py-3 z-10 transition-all duration-700 ${
           isNavbarScrolled ? "bg-black bg-opacity-75" : "bg-transparent"
         }`}
       >

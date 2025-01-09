@@ -26,21 +26,21 @@ export default function Navbar({ isNavbarScrolled }) {
         display: "flex",
         flexDirection: "column",
         gap: 2,
-        padding: 2,
+        paddingX: 2,
       }}
       role="presentation"
       onClick={() => toggleDrawer(false)}
     >
       <List>
         <Link href="/" passHref>
-          <ListItem disablePadding>
+          <ListItem disablePadding className="hover:text-sky-500 ">
             <ListItemButton>
               <ListItemText primary="Home" />
             </ListItemButton>
           </ListItem>
         </Link>
         <Link href="/" passHref>
-          <ListItem disablePadding>
+          <ListItem disablePadding className="hover:text-sky-500">
             <ListItemButton>
               <ListItemText primary="Global" />
             </ListItemButton>
@@ -59,9 +59,9 @@ export default function Navbar({ isNavbarScrolled }) {
       >
         <Image src={logo} alt="EngageX" className="lg:w-[200px] w-[120px]" />
         <div className="flex space-x-6">
-          <button className="px-6 py-2 bg-white text-black text-sm font-medium border border-white rounded-full shadow-md hover:shadow-lg focus:shadow-xl transition-shadow">
+          {/* <button className="px-6 py-2 bg-white text-black text-sm font-medium border border-white rounded-full shadow-md hover:shadow-lg focus:shadow-xl transition-shadow">
             Launch App
-          </button>
+          </button> */}
           <button
             onClick={() => toggleDrawer(true)}
             className="px-3 lg:px-6 py-2 bg-white text-black text-sm font-medium border border-white rounded-full flex items-center space-x-0 lg:space-x-2 transition"
@@ -77,8 +77,12 @@ export default function Navbar({ isNavbarScrolled }) {
         open={drawerOpen}
         onClose={() => toggleDrawer(false)}
       >
-        <div className="flex flex-dir ">
-          <SquareX className="w-[20px]" />
+        <div className="p-2 m-3 bg-white text-black text-sm font-medium self-end rounded-full transition cursor-pointer">
+          <SquareX
+            onClick={() => toggleDrawer(false)}
+            className="text-sky-500"
+            size={30}
+          />
         </div>
         {DrawerList}
       </Drawer>

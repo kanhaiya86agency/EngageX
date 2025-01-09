@@ -9,6 +9,7 @@ import { drawThreeGeo } from "../../../public/threeGeoJSON";
 import { userData } from "../../../public/UserData";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import MarkerPin from "./MarkerPin";
+import { motion } from "framer-motion";
 
 const Earth = () => {
   const canvasRef = useRef(null);
@@ -203,7 +204,20 @@ const Earth = () => {
 
   return (
     <div className="flex flex-col lg:flex-row justify-center bg-[#2c2c2c] h-full sm:h-auto px-4 py-4 lg:px-10 relative w-full">
-      <div className="flex flex-col justify-center items-start gap-3 w-full lg:w-[30%] lg:h-[100vh] px-4 py-4 bg-transparent text-white ">
+      <motion.div
+        initial={{
+          x: -230,
+          opacity: 0,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1.5,
+        }}
+        className="flex flex-col justify-center items-start gap-3 w-full lg:w-[30%] lg:h-[100vh] px-4 py-4 bg-transparent text-white "
+      >
         <p className="border-b-[1px] border-sky-500 w-full text-[28px] font-semibold pb-3">
           Total Market Size
         </p>
@@ -231,7 +245,7 @@ const Earth = () => {
             </span>
           </p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="relative flex items-center justify-center h-[50vh] sm:h-auto lg:h-[100vh] rounded-full w-full lg:w-[70%]">
         <canvas ref={canvasRef} className="w-full h-full" />

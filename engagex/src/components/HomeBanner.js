@@ -168,7 +168,20 @@ export default function HomeBanner() {
             </div>
           </motion.div>
         </div>
-        <div className="text-center">
+        <motion.div
+          initial={{
+            y: 230,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1.5,
+          }}
+          className="text-center"
+        >
           <button
             style={{
               background:
@@ -180,15 +193,14 @@ export default function HomeBanner() {
           >
             <span className="button-text">Launch App</span>
           </button>
-        </div>
-
+        </motion.div>
         <style>{`
         .gradient-border-button-one {
           position: relative;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 0.5rem 1rem;
+          padding: 0.2rem 0.5rem;
           border: none;
           background: transparent;
           border-radius: 10px;
@@ -221,8 +233,8 @@ export default function HomeBanner() {
           position: relative;
           z-index: 1;
           color: white;
-          font-size: 20px;
-          font-weight: bold;
+          font-size: 12px;
+          font-weight: semi-bold;
           border-radius: 50px;
           padding: 0.5rem 1rem;
         }

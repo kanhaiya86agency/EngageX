@@ -8,6 +8,7 @@ import * as TWEEN from "@tweenjs/tween.js";
 import { drawThreeGeo } from "../../../public/threeGeoJSON";
 import { userData } from "../../../public/UserData";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import MarkerPin from "./MarkerPin";
 
 const Earth = () => {
   const canvasRef = useRef(null);
@@ -250,18 +251,7 @@ const Earth = () => {
                 {visibleProfile[index]?.profilePicture ? (
                   <div className="relative w-24 h-24">
                     {visibleProfile[index]?.profilePicture && (
-                      <>
-                        <img
-                          className="lg:w-[92px] w-[60px] rounded-full opacity-100 text-sky-50 p-1"
-                          src="https://goozzby-storage.s3.ap-south-1.amazonaws.com/public/Professional/location-pin1_1735993012196.png"
-                          alt="locationPin"
-                        />
-                        <img
-                          className="absolute top-[3px] lg:top-[5px] left-[10px] lg:left-[16px] lg:w-[60px] w-[40px] rounded-full opacity-100 text-sky-50 p-1"
-                          src={visibleProfile[index]?.profilePicture}
-                          alt={visibleProfile[index]?.name}
-                        />
-                      </>
+                      <MarkerPin visibleProfile={visibleProfile[index]} />
                     )}
                   </div>
                 ) : (

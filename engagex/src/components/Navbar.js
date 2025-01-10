@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import Image from "next/image";
 import Box from "@mui/material/Box";
@@ -14,6 +15,45 @@ import { SquareX } from "lucide-react";
 
 export default function Navbar({ isNavbarScrolled }) {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [deferredPrompt, setDeferredPrompt] = React.useState(null);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleBeforeInstallPrompt = (e) => {
+        e.preventDefault();
+        setDeferredPrompt(e);
+      };
+
+      window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+      return () => {
+        window.removeEventListener(
+          "beforeinstallprompt",
+          handleBeforeInstallPrompt
+        );
+      };
+    }
+  }, []);
+
+  const handleDownloadClick = () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt(); // Show the installation prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("User accepted the A2HS prompt");
+        } else {
+          console.log("User dismissed the A2HS prompt");
+        }
+        setDeferredPrompt(null); // Reset after user interaction
+      });
+    } else {
+      console.warn("The install prompt is not available.");
+      alert(
+        "The install prompt is unavailable. Ensure the following:\n" +
+          "1. The app meets PWA requirements (HTTPS, manifest, service worker).\n" +
+          "2. You've added your site to the home screen."
+      );
+    }
+  };
 
   const toggleDrawer = (newOpen) => {
     setDrawerOpen(newOpen);
@@ -47,6 +87,7 @@ export default function Navbar({ isNavbarScrolled }) {
           </ListItem>
         </Link>
       </List>
+      <button onClick={handleDownloadClick}>Download</button>
     </Box>
   );
 
@@ -60,7 +101,7 @@ export default function Navbar({ isNavbarScrolled }) {
         <Image src={logo} alt="EngageX" className="lg:w-[200px] w-[120px]" />
         <div className="flex space-x-6">
           <button className="px-6 py-2 bg-white text-black text-sm font-medium border border-white rounded-full shadow-md hover:shadow-lg focus:shadow-xl transition-shadow">
-            Launch App
+            Login
           </button>
           <button
             onClick={() => toggleDrawer(true)}

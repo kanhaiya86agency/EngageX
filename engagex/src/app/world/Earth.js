@@ -10,6 +10,7 @@ import { userData } from "../../../public/UserData";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import MarkerPin from "./MarkerPin";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const Earth = () => {
   const canvasRef = useRef(null);
@@ -17,6 +18,13 @@ const Earth = () => {
   const [popupPosition, setPopupPosition] = useState([{ x: 0, y: 0 }]);
   const [isInteracting, setIsInteracting] = useState(false);
 
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1024px)",
+  });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1025px)" });
+
+  console.log({ isMobile, isTablet, isDesktop });
   useEffect(() => {
     const canvas = canvasRef.current;
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
@@ -40,9 +48,26 @@ const Earth = () => {
     controls.rotateSpeed = 1.0;
     controls.zoomSpeed = 0.5;
 
-    const aspectRatio = canvas.clientWidth / canvas.clientHeight;
-    controls.minDistance = 1.2 * aspectRatio; // Adjust according to aspect ratio
-    controls.maxDistance = 3 * aspectRatio; // Adjust according to aspect ratio
+    const updateControlDistances = () => {
+      const aspectRatio = canvas.clientWidth / canvas.clientHeight;
+      const baseDistance = 0.7; // Adjust for a snug fit
+      // controls.minDistance = baseDistance * aspectRatio;
+      // controls.maxDistance = baseDistance * 2 * aspectRatio;
+
+      if (isMobile) {
+        controls.minDistance = 1.8; // Suitable for smaller screens
+        controls.maxDistance = 1.5;
+      } else if (isTablet) {
+        controls.minDistance = 1.5; // Slightly larger values for tablets
+        controls.maxDistance = 1.7;
+      } else if (isDesktop) {
+        controls.minDistance = 1.2; // Default values for desktops
+        controls.maxDistance = 3.0;
+      }
+    };
+
+    updateControlDistances();
+
     controls.addEventListener("start", () => setIsInteracting(true));
     controls.addEventListener("end", () => setIsInteracting(false));
 
@@ -154,6 +179,8 @@ const Earth = () => {
       renderer.setSize(width, height);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
+
+      updateControlDistances();
     };
 
     window.addEventListener("resize", handleResize);
@@ -203,7 +230,7 @@ const Earth = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center bg-[#2c2c2c] h-full sm:h-auto px-4 py-4 lg:px-10 relative w-full">
+    <div className="flex flex-col lg:flex-row md:flex-col justify-center bg-[#2c2c2c] h-full sm:h-auto px-4 py-4 lg:px-10 relative w-full">
       <motion.div
         initial={{
           x: -230,

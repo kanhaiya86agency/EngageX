@@ -5,7 +5,7 @@ export const userData = [
     latitude: 37.7749,
     longitude: -122.4194, // San Francisco, North America
     continent: "North America",
-    profilePicture: "./userDataImages/user1.png",
+    profilePicture: "./userDataImages/User1.png",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const userData = [
     latitude: 55.7558,
     longitude: 37.6173, // Moscow, Europe
     continent: "Europe",
-    profilePicture: "./userDataImages/user2.png",
+    profilePicture: "./userDataImages/User2.png",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const userData = [
     latitude: 13.7563,
     longitude: 100.5018, // Bangkok, Asia
     continent: "Asia",
-    profilePicture: "./userDataImages/user4.png",
+    profilePicture: "./userDataImages/User4.png",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const userData = [
     latitude: -33.8688,
     longitude: 151.2093, // Sydney, Australia
     continent: "Australia",
-    profilePicture: "./userDataImages/user3.png",
+    profilePicture: "./userDataImages/User3.png",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ export const userData = [
     latitude: -23.5505,
     longitude: -46.6333, // São Paulo, South America
     continent: "South America",
-    profilePicture: "./userDataImages/user6.png",
+    profilePicture: "./userDataImages/User6.png",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ export const userData = [
     latitude: 48.8566,
     longitude: 2.3522, // Paris, Europe
     continent: "Europe",
-    profilePicture: "./userDataImages/user5.png",
+    profilePicture: "./userDataImages/User5.png",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ export const userData = [
     latitude: -1.2921,
     longitude: 36.8219, // Nairobi, Africa
     continent: "Africa",
-    profilePicture: "./userDataImages/user4.png",
+    profilePicture: "./userDataImages/User4.png",
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ export const userData = [
     latitude: -34.6037,
     longitude: -58.3816, // Buenos Aires, South America
     continent: "South America",
-    profilePicture: "./userDataImages/user2.png",
+    profilePicture: "./userDataImages/User2.png",
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ export const userData = [
     latitude: 35.6762,
     longitude: 139.6503, // Tokyo, Asia
     continent: "Asia",
-    profilePicture: "./userDataImages/user5.png",
+    profilePicture: "./userDataImages/User5.png",
   },
   {
     id: 10,
@@ -77,7 +77,7 @@ export const userData = [
     latitude: -26.2041,
     longitude: 28.0473, // Johannesburg, Africa
     continent: "Africa",
-    profilePicture: "./userDataImages/user8.png",
+    profilePicture: "./userDataImages/User8.png",
   },
   {
     id: 11,
@@ -85,6 +85,6 @@ export const userData = [
     latitude: 19.4326,
     longitude: -99.1332, // Mexico City, North America
     continent: "North America",
-    profilePicture: "./userDataImages/user2.png",
+    profilePicture: "./userDataImages/User2.png",
   },
 ];

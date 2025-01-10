@@ -2,37 +2,39 @@
 
 import Image from "next/image";
 import comingSoonImage from "../../public/ComingSoon.png";
+import Footer from "./Footer";
 
 export default function HomeBannerTwo() {
   return (
-    <div className="relative h-screen w-full overflow-hidden  bg-indigo-600 bg-opacity-25">
-      <div className="absolute inset-0 h-full w-full ">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-          src="./ladies.mp4"
-        ></video>
-      </div>
-
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-5">
-        <h3 className="text-white text-2xl md:text-[55px] mb-2">
-          Stars Are Rehearsing....
-        </h3>
-        <div className="mt-5 mb-5">
-          <Image
-            src={comingSoonImage}
-            alt="commit soon"
-            className="w-[600px]"
-          />
+    <>
+      <div className="relative h-screen w-full overflow-hidden  bg-indigo-600 bg-opacity-25">
+        <div className="absolute inset-0 h-full w-full ">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover"
+            src="./ladies.mp4"
+          ></video>
         </div>
-        <button className="gradient-border-button mt-6 ">
-          <span className="button-text">Join now</span>
-        </button>
-      </div>
-      <style>{`
+
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-5">
+          <h3 className="text-white text-2xl md:text-[55px] mb-2">
+            Stars Are Rehearsing....
+          </h3>
+          <div className="mt-5 mb-5">
+            <Image
+              src={comingSoonImage}
+              alt="commit soon"
+              className="w-[600px]"
+            />
+          </div>
+          <button className="gradient-border-button mt-6 ">
+            <span className="button-text">Join now</span>
+          </button>
+        </div>
+        <style>{`
         .gradient-border-button {
           position: relative;
           display: inline-flex;
@@ -90,6 +92,7 @@ export default function HomeBannerTwo() {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 }

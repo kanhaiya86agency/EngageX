@@ -15,7 +15,7 @@ export default function HomeBannerTwo() {
             muted
             playsInline
             className="absolute inset-0 h-full w-full object-cover"
-            src="./ladies.mp4"
+            src="https://hypegymapp.s3.ap-south-1.amazonaws.com/ladies.mp4"
           ></video>
         </div>
 

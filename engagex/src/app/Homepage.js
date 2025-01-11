@@ -301,17 +301,6 @@ export default function HomePage() {
           <Footer />
         </div>
       </div>
-
-      {/* Section 4 (Footer section) */}
-      {/* <div
-        id="section4"
-        className="min-h-screen flex flex-col justify-between "
-        ref={(el) => (sectionsRef.current[3] = el)}
-      >
-        <div className="content flex-grow">
-          <Footer />
-        </div> */}
-      {/* </div> */}
     </div>
   );
 }

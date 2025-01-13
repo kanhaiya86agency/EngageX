@@ -87,4 +87,60 @@ export const userData = [
     continent: "North America",
     profilePicture: "./userDataImages/User2.png",
   },
+  {
+    id: 12,
+    name: "Paul Walker",
+    latitude: 51.5074,
+    longitude: -0.1278, // London, Europe
+    continent: "Europe",
+    profilePicture: "./userDataImages/User7.png",
+  },
+  {
+    id: 13,
+    name: "Quinn Carter",
+    latitude: 28.6139,
+    longitude: 77.209,
+    continent: "Asia", // Delhi, Asia
+    profilePicture: "./userDataImages/User9.png",
+  },
+  {
+    id: 14,
+    name: "Rebecca Adams",
+    latitude: -41.2865,
+    longitude: 174.7762, // Wellington, Australia
+    continent: "Australia",
+    profilePicture: "./userDataImages/User10.png",
+  },
+  {
+    id: 15,
+    name: "Samuel Wilson",
+    latitude: 40.7128,
+    longitude: -74.006, // New York, North America
+    continent: "North America",
+    profilePicture: "./userDataImages/User11.png",
+  },
+  {
+    id: 16,
+    name: "Tina Garcia",
+    latitude: -12.0464,
+    longitude: -77.0428, // Lima, South America
+    continent: "South America",
+    profilePicture: "./userDataImages/User12.png",
+  },
+  {
+    id: 17,
+    name: "Uma Nelson",
+    latitude: 6.9271,
+    longitude: 79.8612, // Colombo, Asia
+    continent: "Asia",
+    profilePicture: "./userDataImages/User13.png",
+  },
+  {
+    id: 18,
+    name: "Victor Green",
+    latitude: -17.8249,
+    longitude: 31.053, // Harare, Africa
+    continent: "Africa",
+    profilePicture: "./userDataImages/User14.png",
+  },
 ];

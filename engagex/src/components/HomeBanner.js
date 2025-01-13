@@ -10,6 +10,7 @@ export default function HomeBanner() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isScaled, setIsScaled] = useState(false);
   const videoRef = useRef(null);
+
   const slides = [
     {
       text1: "An Exclusive",
@@ -88,7 +89,7 @@ export default function HomeBanner() {
           xmlns="http://www.w3.org/2000/svg"
           className={`transition-transform duration-1000 ease-in ${
             isScaled && "scale-[17]"
-          } cursor-pointer w-[250px] h-[250px] md:w-[300px] md:h-[300px] lg:w-[360px] lg:h-[310px]`}
+          } cursor-pointer w-[180px] h-[180px] md:w-[220px] md:h-[220px] lg:w-[300px] lg:h-[300px]`}
           style={{ pointerEvents: "auto" }}
         >
           <defs>
@@ -115,7 +116,8 @@ export default function HomeBanner() {
         </svg>
       </div>
 
-      <div className="absolute bottom-[20%] lg:bottom-8 mx-auto w-full">
+      {/* Text Content */}
+      <div className="absolute bottom-[15%] lg:bottom-8 mx-auto w-full">
         <div className="w-[90%] mx-auto">
           <motion.div
             key={`text1-${currentIndex}`}
@@ -131,8 +133,8 @@ export default function HomeBanner() {
               duration: 0.8,
             }}
           >
-            <div className="flex justify-center md:justify-center lg:justify-start">
-              <h1 className="text-white text-[40px] md:text-[5rem] lg:text-[125px] font-medium">
+            <div className="flex justify-center lg:justify-start px:5 lg:px-14">
+              <h1 className="text-white text-[40px] md:text-[80px] lg:text-[125px] font-medium">
                 <GradualSpacing text={slides[currentIndex].text1} />
               </h1>
             </div>
@@ -151,8 +153,8 @@ export default function HomeBanner() {
               duration: 0.8,
             }}
           >
-            <div className="flex justify-center md:justify-center lg:justify-end mt-0 md:mt-[-20px]">
-              <h1 className="text-white text-[40px] md:text-[5rem] lg:text-[125px] font-medium">
+            <div className="flex justify-center lg:justify-end mt-0 px:5 lg:px-14">
+              <h1 className="text-white text-[40px] md:text-[80px] lg:text-[125px] font-medium">
                 <RightAnimation text={slides[currentIndex].text2} />
               </h1>
             </div>

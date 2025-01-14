@@ -1,4 +1,4 @@
-// File: C:\Users\Dell\Desktop\Prathamesh86\EngageX\engagex\src\app\world\page.js
+// File: /Users/kanhaiyachauhan/Desktop/EngageX/engagex/src/app/world/page.js
 import * as entry from '../../../../src/app/world/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

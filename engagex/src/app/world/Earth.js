@@ -24,7 +24,6 @@ const Earth = () => {
   });
   const isDesktop = useMediaQuery({ query: "(min-width: 1025px)" });
 
-  console.log({ isMobile, isTablet, isDesktop });
   useEffect(() => {
     const canvas = canvasRef.current;
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });

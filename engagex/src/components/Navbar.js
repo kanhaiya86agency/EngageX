@@ -173,7 +173,6 @@ export default function Navbar({ isNavbarScrolled }) {
       };
     }
   }, []);
-  console.log({ isMobile, userAgent: navigator.userAgent });
   const handleDownloadClick = () => {
     if (isMobile) {
       if (isIOS) {
@@ -186,9 +185,9 @@ export default function Navbar({ isNavbarScrolled }) {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
           if (choiceResult.outcome === "accepted") {
-            console.log("User accepted the A2HS prompt");
+            console.info("User accepted the A2HS prompt");
           } else {
-            console.log("User dismissed the A2HS prompt");
+            console.info("User dismissed the A2HS prompt");
           }
           setDeferredPrompt(null);
         });

@@ -6,7 +6,7 @@ export const userData = [
     longitude: -122.4194, // San Francisco, North America
     continent: "North America",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User1.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User1.svg",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const userData = [
     longitude: 37.6173, // Moscow, Europe
     continent: "Europe",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.svg",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const userData = [
     longitude: 100.5018, // Bangkok, Asia
     continent: "Asia",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User4.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User4.svg",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const userData = [
     longitude: 151.2093, // Sydney, Australia
     continent: "Australia",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User3.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User3.svg",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const userData = [
     longitude: -46.6333, // São Paulo, South America
     continent: "South America",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User6.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User6.svg",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const userData = [
     longitude: 2.3522, // Paris, Europe
     continent: "Europe",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User5.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User5.svg",
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export const userData = [
     longitude: 36.8219, // Nairobi, Africa
     continent: "Africa",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User4.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User4.svg",
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export const userData = [
     longitude: -58.3816, // Buenos Aires, South America
     continent: "South America",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.svg",
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export const userData = [
     longitude: 139.6503, // Tokyo, Asia
     continent: "Asia",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User5.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User5.svg",
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ export const userData = [
     longitude: 28.0473, // Johannesburg, Africa
     continent: "Africa",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User8.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User8.svg",
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ export const userData = [
     longitude: -99.1332, // Mexico City, North America
     continent: "North America",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.svg",
   },
   {
     id: 12,
@@ -105,7 +105,7 @@ export const userData = [
     longitude: -0.1278, // London, Europe
     continent: "Europe",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User7.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User7.svg",
   },
   {
     id: 13,
@@ -114,7 +114,7 @@ export const userData = [
     longitude: 77.209,
     continent: "Asia", // Delhi, Asia
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User9.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User9.svg",
   },
   {
     id: 14,
@@ -123,7 +123,7 @@ export const userData = [
     longitude: 174.7762, // Wellington, Australia
     continent: "Australia",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User10.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User10.svg",
   },
   {
     id: 15,
@@ -132,7 +132,7 @@ export const userData = [
     longitude: -74.006, // New York, North America
     continent: "North America",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User11.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User11.svg",
   },
   {
     id: 16,
@@ -141,7 +141,7 @@ export const userData = [
     longitude: -77.0428, // Lima, South America
     continent: "South America",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User12.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User12.svg",
   },
   {
     id: 17,
@@ -150,7 +150,7 @@ export const userData = [
     longitude: 79.8612, // Colombo, Asia
     continent: "Asia",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User13.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User13.svg",
   },
   {
     id: 18,
@@ -159,6 +159,6 @@ export const userData = [
     longitude: 31.053, // Harare, Africa
     continent: "Africa",
     profilePicture:
-      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/user14.png",
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User14.svg",
   },
 ];

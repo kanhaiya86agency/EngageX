@@ -180,7 +180,7 @@ export default function HomePage() {
 
       gsap.fromTo(
         content,
-        { opacity: 0, y: 30 },
+        { opacity: 1 },
         {
           opacity: 1,
           y: 0,
@@ -269,7 +269,6 @@ export default function HomePage() {
 
       <Navbar isNavbarScrolled={isNavbarScrolled} />
 
-      {/* Section 1 */}
       <div
         id="section1"
         className="h-screen"
@@ -280,7 +279,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Section 2 */}
       <div
         id="section2"
         className="lg:h-screen md:h-auto h-auto"

@@ -115,7 +115,7 @@ export default function HomeBanner() {
         </svg>
       </div>
 
-      <div className="absolute bottom-[20%] lg:left-5 lg:bottom-8 w-full">
+      <div className="absolute bottom-[20%] mx-auto lg:bottom-8 w-full">
         <div className="w-[80%] mx-auto">
           <motion.div
             key={`text1-${currentIndex}`}
@@ -132,7 +132,7 @@ export default function HomeBanner() {
             }}
           >
             <div className="flex justify-center md:justify-center lg:justify-start">
-              <h1 className="text-white text-[40px] md:text-[3rem] lg:text-[113px] font-medium">
+              <h1 className="text-white text-[40px] md:text-[4rem] lg:text-[113px] font-medium">
                 <GradualSpacing text={slides[currentIndex].text1} />
               </h1>
             </div>
@@ -152,7 +152,7 @@ export default function HomeBanner() {
             }}
           >
             <div className="flex justify-center md:justify-center lg:justify-end mt-0 md:mt-[-20px]">
-              <h1 className="text-white text-[40px] md:text-[3rem] lg:text-[113px] font-medium">
+              <h1 className="text-white text-[40px] md:text-[4rem] lg:text-[113px] font-medium">
                 <RightAnimation text={slides[currentIndex].text2} />
               </h1>
             </div>

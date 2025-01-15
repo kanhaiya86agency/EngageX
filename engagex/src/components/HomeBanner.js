@@ -14,27 +14,28 @@ export default function HomeBanner() {
     {
       text1: "An Exclusive",
       text2: "Experience App!",
-      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/popcorn.mp4",
+      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/popcornNew.mp4",
     },
     {
       text1: "Spotlighting Craft,",
       text2: "Fueling Stardom",
-      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/spotlight.mp4",
+      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/spotlightNew.mp4",
     },
     {
       text1: "Only fan are",
       text2: "STARMAKERS!",
-      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/Onlyfans.mp4",
+      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/OnlyfansNew.mp4",
     },
     {
       text1: "Stars rewards",
       text2: "True Fans!",
-      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/money.mp4",
+      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/moneyNew.mp4",
     },
     {
       text1: "EngageX App ",
       text2: "For Every Moment!",
-      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/HomeBannerTwo.mp4",
+      video:
+        "https://hypegymapp.s3.ap-south-1.amazonaws.com/HomeBannerTwoNew.mp4",
     },
   ];
 

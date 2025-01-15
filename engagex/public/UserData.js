@@ -53,15 +53,15 @@ export const userData = [
     profilePicture:
       "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User5.svg",
   },
-  // {
-  //   id: 7,
-  //   name: "Ivan Davis",
-  //   latitude: -1.2921,
-  //   longitude: 36.8219, // Nairobi, Africa
-  //   continent: "Africa",
-  //   profilePicture:
-  //     "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User4.svg",
-  // },
+  {
+    id: 7,
+    name: "Ivan Davis",
+    latitude: -1.2921,
+    longitude: 36.8219, // Nairobi, Africa
+    continent: "Africa",
+    profilePicture:
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User4.svg",
+  },
   // {
   //   id: 8,
   //   name: "Liam Lewis",

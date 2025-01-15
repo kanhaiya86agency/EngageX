@@ -289,7 +289,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* <div
+      <div
         id="section3"
         className="h-[110%]"
         ref={(el) => (sectionsRef.current[2] = el)}
@@ -298,7 +298,7 @@ export default function HomePage() {
           <HomeBannerTwo />
           <Footer />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

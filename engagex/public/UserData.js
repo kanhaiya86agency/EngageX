@@ -62,51 +62,51 @@ export const userData = [
     profilePicture:
       "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User4.svg",
   },
-  // {
-  //   id: 8,
-  //   name: "Liam Lewis",
-  //   latitude: -34.6037,
-  //   longitude: -58.3816, // Buenos Aires, South America
-  //   continent: "South America",
-  //   profilePicture:
-  //     "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.svg",
-  // },
-  // {
-  //   id: 9,
-  //   name: "Mia Robinson",
-  //   latitude: 35.6762,
-  //   longitude: 139.6503, // Tokyo, Asia
-  //   continent: "Asia",
-  //   profilePicture:
-  //     "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User5.svg",
-  // },
-  // {
-  //   id: 10,
-  //   name: "Noah Hall",
-  //   latitude: -26.2041,
-  //   longitude: 28.0473, // Johannesburg, Africa
-  //   continent: "Africa",
-  //   profilePicture:
-  //     "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User8.svg",
-  // },
-  // {
-  //   id: 11,
-  //   name: "Olivia Martinez",
-  //   latitude: 19.4326,
-  //   longitude: -99.1332, // Mexico City, North America
-  //   continent: "North America",
-  //   profilePicture:
-  //     "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.svg",
-  // },
-  // {
-  //   id: 12,
-  //   name: "Paul Walker",
-  //   latitude: 51.5074,
-  //   longitude: -0.1278, // London, Europe
-  //   continent: "Europe",
-  //   profilePicture:
-  //     "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User7.svg",
-  // },
+  {
+    id: 8,
+    name: "Liam Lewis",
+    latitude: -34.6037,
+    longitude: -58.3816, // Buenos Aires, South America
+    continent: "South America",
+    profilePicture:
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.svg",
+  },
+  {
+    id: 9,
+    name: "Mia Robinson",
+    latitude: 35.6762,
+    longitude: 139.6503, // Tokyo, Asia
+    continent: "Asia",
+    profilePicture:
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User5.svg",
+  },
+  {
+    id: 10,
+    name: "Noah Hall",
+    latitude: -26.2041,
+    longitude: 28.0473, // Johannesburg, Africa
+    continent: "Africa",
+    profilePicture:
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User8.svg",
+  },
+  {
+    id: 11,
+    name: "Olivia Martinez",
+    latitude: 19.4326,
+    longitude: -99.1332, // Mexico City, North America
+    continent: "North America",
+    profilePicture:
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User2.svg",
+  },
+  {
+    id: 12,
+    name: "Paul Walker",
+    latitude: 51.5074,
+    longitude: -0.1278, // London, Europe
+    continent: "Europe",
+    profilePicture:
+      "https://hrmportal.s3.ap-south-1.amazonaws.com/userDataImages/User7.svg",
+  },
   // {
   //   id: 13,
   //   name: "Quinn Carter",

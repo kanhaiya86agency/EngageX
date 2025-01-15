@@ -34,8 +34,7 @@ export default function HomeBanner() {
     {
       text1: "EngageX App ",
       text2: "For Every Moment!",
-      video:
-        "https://hypegymapp.s3.ap-south-1.amazonaws.com/HomeBannerTwoNew.mp4",
+      video: "https://hypegymapp.s3.ap-south-1.amazonaws.com/HomeBannerTwo.mp4",
     },
   ];
 

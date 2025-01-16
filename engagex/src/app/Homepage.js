@@ -293,7 +293,7 @@ export default function HomePage() {
       <div
         id="section3"
         className="lg:h-screen bg-black md:h-auto h-auto"
-        ref={(el) => (sectionsRef.current[1] = el)}
+        ref={(el) => (sectionsRef.current[2] = el)}
       >
         <div className="content">
           <OurKeyValue />
@@ -303,7 +303,7 @@ export default function HomePage() {
       <div
         id="section4"
         className="h-[110%]"
-        ref={(el) => (sectionsRef.current[2] = el)}
+        ref={(el) => (sectionsRef.current[3] = el)}
       >
         <div className="content flex-grow">
           <HomeBannerTwo />

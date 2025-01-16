@@ -193,11 +193,7 @@ export default function Navbar({ isNavbarScrolled }) {
         });
       } else {
         console.warn("The install prompt is unavailable.");
-        alert(
-          "The install prompt is unavailable. Ensure the following:\n" +
-            "1. The app meets PWA requirements (HTTPS, manifest, service worker).\n" +
-            "2. You've added your site to the home screen."
-        );
+        alert("You've already added your site to the home screen.");
       }
     } else {
       // For web users, you can either provide a link to download the PWA from the web app store or leave this part out.

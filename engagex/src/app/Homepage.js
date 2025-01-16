@@ -113,7 +113,7 @@
 //       {/* Section 1 */}
 //       <div
 //         id="section1"
-//         className="h-screen"
+//         className="h-screen bg-black"
 //         ref={(el) => (sectionsRef.current[0] = el)}
 //       >
 //         <div className="content">
@@ -124,7 +124,7 @@
 //       {/* Section 2 */}
 //       <div
 //         id="section2"
-//         className="lg:h-screen md:h-auto h-auto"
+//         className="lg:h-screen bg-black md:h-auto h-auto"
 //         ref={(el) => (sectionsRef.current[1] = el)}
 //       >
 //         <div className="content">
@@ -144,7 +144,7 @@
 
 //       <div
 //         id="section4"
-//         className="min-h-screen flex flex-col justify-between "
+//         className="min-h-screen bg-black flex flex-col justify-between "
 //         ref={(el) => (sectionsRef.current[3] = el)}
 //       >
 //         <div className="content flex-grow">
@@ -165,6 +165,7 @@ import Footer from "@/components/Footer";
 import { ArrowDown } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import OurKeyValue from "@/components/OurKeyValue/OurKeyValue";
 
 export default function HomePage() {
   const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
@@ -271,7 +272,7 @@ export default function HomePage() {
 
       <div
         id="section1"
-        className="h-screen"
+        className="h-screen bg-black"
         ref={(el) => (sectionsRef.current[0] = el)}
       >
         <div className="content">
@@ -281,7 +282,7 @@ export default function HomePage() {
 
       <div
         id="section2"
-        className="lg:h-screen md:h-auto h-auto"
+        className="lg:h-screen bg-black md:h-auto h-auto"
         ref={(el) => (sectionsRef.current[1] = el)}
       >
         <div className="content">
@@ -291,6 +292,16 @@ export default function HomePage() {
 
       <div
         id="section3"
+        className="lg:h-screen bg-black md:h-auto h-auto"
+        ref={(el) => (sectionsRef.current[1] = el)}
+      >
+        <div className="content">
+          <OurKeyValue />
+        </div>
+      </div>
+
+      <div
+        id="section4"
         className="h-[110%]"
         ref={(el) => (sectionsRef.current[2] = el)}
       >

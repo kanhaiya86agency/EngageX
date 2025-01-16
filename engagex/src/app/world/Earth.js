@@ -229,7 +229,7 @@ const Earth = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row md:flex-col justify-center bg-[#2c2c2c] h-full sm:h-auto px-4 py-4 lg:px-10 relative w-full">
+    <div className="flex flex-col lg:flex-col xl:flex-row md:flex-col justify-center bg-[#2c2c2c] h-full sm:h-auto px-4 py-4 lg:px-10 relative w-full">
       <motion.div
         initial={{
           x: -230,

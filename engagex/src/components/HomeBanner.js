@@ -4,12 +4,20 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { GradualSpacing } from "./TextAnimationLeft";
 import { RightAnimation } from "./TextAnimationRight";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function HomeBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isScaled, setIsScaled] = useState(false);
   const videoRef = useRef(null);
+
+  // Observing the current video
+  const { ref: inViewRef, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.3, // Adjust based on when you want it to trigger
+  });
+
   const slides = [
     {
       text1: "An Exclusive",
@@ -51,7 +59,7 @@ export default function HomeBanner() {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
       setIsAnimating(false);
     }, 1000);
-  });
+  }, []);
 
   const handleStarClick = () => {
     if (!isAnimating) {
@@ -72,12 +80,15 @@ export default function HomeBanner() {
     <div className="relative h-screen w-full overflow-hidden">
       <video
         key={slides[currentIndex].video}
-        autoPlay
+        autoPlay={inView} // Play video only when in view
         muted
         playsInline
         className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
         src={slides[currentIndex]?.video}
-        ref={videoRef}
+        ref={(node) => {
+          videoRef.current = node;
+          inViewRef(node); // Combine refs for useInView and videoRef
+        }}
         onEnded={handleVideoEnd}
       ></video>
 

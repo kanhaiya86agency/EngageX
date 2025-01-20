@@ -1,22 +1,28 @@
 "use client";
 
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 import comingSoonImage from "../../public/ComingSoon.png";
-import Footer from "./Footer";
 
 export default function HomeBannerTwo() {
+  const { ref, inView } = useInView({
+    threshold: 0.1, // Trigger when 50% of the video is in or out of view
+  });
+
   return (
     <>
-      <div className="relative h-screen w-full overflow-hidden  bg-indigo-600 bg-opacity-25">
-        <div className="absolute inset-0 h-full w-full ">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 h-full w-full object-cover"
-            src="https://hypegymapp.s3.ap-south-1.amazonaws.com/ladies.mp4"
-          ></video>
+      <div className="relative h-screen w-full overflow-hidden bg-indigo-600 bg-opacity-25">
+        <div className="absolute inset-0 h-full w-full" ref={ref}>
+          {inView ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 h-full w-full object-cover"
+              src="https://hypegymapp.s3.ap-south-1.amazonaws.com/ladies.mp4"
+            ></video>
+          ) : null}
         </div>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-5">
@@ -30,10 +36,11 @@ export default function HomeBannerTwo() {
               className="w-[600px]"
             />
           </div>
-          <button className="gradient-border-button mt-6 ">
+          <button className="gradient-border-button mt-6">
             <span className="button-text">Join now</span>
           </button>
         </div>
+
         <style>{`
         .gradient-border-button {
           position: relative;
